@@ -151,9 +151,9 @@ namespace defaultItemFaces {
 namespace {
 
 	const std::array<GLfloat, 12> shadow{
-		-HALF_SIZE, -1.7 * HALF_SIZE, -HALF_SIZE,
-		+HALF_SIZE, -1.7 * HALF_SIZE, -HALF_SIZE,
-		+HALF_SIZE, -1.7 * HALF_SIZE, +HALF_SIZE,
-		-HALF_SIZE, -1.7 * HALF_SIZE, +HALF_SIZE,
+		-HALF_SIZE, -1.7f * HALF_SIZE, -HALF_SIZE,
+		+HALF_SIZE, -1.7f * HALF_SIZE, -HALF_SIZE,
+		+HALF_SIZE, -1.7f * HALF_SIZE, +HALF_SIZE,
+		-HALF_SIZE, -1.7f * HALF_SIZE, +HALF_SIZE,
 	};
 } // namespace

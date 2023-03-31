@@ -2,6 +2,7 @@
 
 #include <array>
 #include <iostream>
+#include <cmath>
 
 TextureAtlas::TextureAtlas(const std::string &textureFileName, unsigned int imageSize, unsigned int individualTextureSize)
 	:m_lastTexCoords{ -1, -1 }
@@ -67,7 +68,7 @@ std::vector<Pixel*>& TextureAtlas::getIndivTexturePixels (const sf::Vector2i & c
 	m_indivTexturePixels.clear();
 
 	int curPos = 0;
-	int indivTexturesInCol = sqrt(m_imageSize);
+	int indivTexturesInCol = std::sqrt(m_imageSize); //TODO_EK
 	int numberOfPixelsInRow = m_individualTextureSize * m_individualTextureSize * indivTexturesInCol;
 	curPos += coords.y * numberOfPixelsInRow;
 	curPos += coords.x * m_individualTextureSize;

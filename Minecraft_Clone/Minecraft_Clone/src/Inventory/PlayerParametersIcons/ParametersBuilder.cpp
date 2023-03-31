@@ -129,10 +129,10 @@ void ParametersBuilder::buildIcon(ParameterType parameterType, int number)
 
 	sf::Vector2i textureStarPos = ParametersTexturePositions[parameterType];
 	std::array<GLfloat, 8U> texCoords{
-		textureStarPos.x,		textureStarPos.y,
-		textureStarPos.x + 9,	textureStarPos.y,
-		textureStarPos.x + 9,	textureStarPos.y - 9,
-		textureStarPos.x,		textureStarPos.y - 9,
+        (GLfloat)textureStarPos.x,		(GLfloat)textureStarPos.y,
+        (GLfloat)textureStarPos.x + 9,	(GLfloat)textureStarPos.y,
+        (GLfloat)textureStarPos.x + 9,	(GLfloat)textureStarPos.y - 9,
+        (GLfloat)textureStarPos.x,		(GLfloat)textureStarPos.y - 9,
 	};
 
 	for (auto & textureCoord : texCoords) {

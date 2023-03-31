@@ -204,10 +204,10 @@ void ItemIconsBuilder::buildDigit(int digit, sf::Vector2i rightBottomPos, float 
 
 	sf::Vector2i textureStarPos = DigitsTexturePositions[digit];
 	std::array<GLfloat, 8U> texCoords{
-		textureStarPos.x,		textureStarPos.y,
-		textureStarPos.x + 6,	textureStarPos.y,
-		textureStarPos.x + 6,	textureStarPos.y - 8,
-		textureStarPos.x,		textureStarPos.y - 8,
+            (GLfloat)textureStarPos.x,		(GLfloat)textureStarPos.y,
+            (GLfloat)textureStarPos.x + 6,	(GLfloat)textureStarPos.y,
+            (GLfloat)textureStarPos.x + 6,	(GLfloat)textureStarPos.y - 8,
+            (GLfloat)textureStarPos.x,		(GLfloat)textureStarPos.y - 8,
 	};
 
 	for (auto & textCoord : texCoords)

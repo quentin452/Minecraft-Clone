@@ -3,7 +3,7 @@
 #include <iostream>
 
 Sound::Sound(SoundId id, std::string && filePath)
-	: m_id{ id }
+	: m_id (id)
 {
 	if (id == SoundId::NUMBER_OF_SOUNDS)
 		return;
