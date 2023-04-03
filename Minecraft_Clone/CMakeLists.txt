@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.19)
 
 project(MINECRAFT_CLONE CXX)
 
-# TODO support x64 libs
-# TODO support debug libs
+# TODO support x86/x64 libs
+# TODO support debug/release libs
 
 # TODO change to find_library later
 link_directories(Dependencies/GLEW/lib/Release/Win32)
@@ -26,7 +26,7 @@ target_include_directories(Minecraft_Library PRIVATE Dependencies/libnoise/inclu
 include_directories(Minecraft_Clone/src)
 include_directories(Minecraft_Clone/src/vendor)
 
-add_compile_definitions(SFML_STATIC)
+#add_compile_definitions(SFML_STATIC) #Release
 add_compile_definitions(GLEW_STATIC)
 # maybe remove this
 add_compile_definitions(_MBCS)
@@ -35,8 +35,10 @@ add_compile_definitions(_MBCS)
 target_link_libraries(Minecraft_Library PRIVATE libnoise)
 target_link_libraries(Minecraft_Library PRIVATE glew32s)
 target_link_libraries(Minecraft_Library PRIVATE flac freetype ogg openal32)
-target_link_libraries(Minecraft_Library PRIVATE sfml-audio-s sfml-graphics-s sfml-system-s sfml-window-s)
+target_link_libraries(Minecraft_Library PRIVATE sfml-audio-d sfml-graphics-d sfml-system-d sfml-window-d) #Debug
+#target_link_libraries(Minecraft_Library PRIVATE sfml-audio-s sfml-graphics-s sfml-system-s sfml-window-s) #Release
 target_link_libraries(Minecraft_Library PRIVATE vorbisenc vorbisfile vorbis)
 target_link_libraries(Minecraft_Library PRIVATE opengl32 gdi32 winmm)
+target_link_libraries(Minecraft_Library PRIVATE User32 Shell32) #Debug
 
 set_target_properties(Minecraft_Library PROPERTIES LINKER_LANGUAGE CXX)
