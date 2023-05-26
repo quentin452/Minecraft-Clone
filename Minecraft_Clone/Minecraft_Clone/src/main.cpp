@@ -5,6 +5,8 @@
 
 #include "UserSettings/Config.h"
 
+#include "lib/entt/entt.hpp"
+
 #ifdef __WIN32
 extern "C" {
 // Enable dedicated graphics
