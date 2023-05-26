@@ -10,12 +10,6 @@ public:
     BlockUtils() = delete;
 
 public:
-    // FIXME TODO DOESN4T WORK 
-    bool hasAdjacentWater(World& world, int x, int y, int z);
-    // FIXME TODO DOESN4T WORK 
-    bool canPlaceSugarcane(BlockId blockId, World& world, int x, int y, int z);
-    static bool canPlaceOnBlock(BlockId blockId, BlockId placeOnThisBlockId);
-
     static BlockId getRandomFlower(Rand& rand);
     static BlockId getRandomDoubleFlower(Rand& rand);
     static BlockId getDoublePlantMain(BlockId blockId);

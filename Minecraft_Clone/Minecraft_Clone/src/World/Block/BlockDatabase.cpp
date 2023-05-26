@@ -1,6 +1,7 @@
 #include "BlockDatabase.h"
-
 #include "ChunkBlock.h"
+#include "../World/World/world.h"
+
 // item handler
 BlockDatabase::BlockDatabase()
     : textureAtlas("DefaultPack", 256, 16)
@@ -125,6 +126,26 @@ const BlockData &BlockDatabase::getData(BlockId id) const
 {
     return m_blocks[(int)id]->getData();
 }
+// FIXME BUG DOESNT WORK
+bool BlockDatabase::canPlaceSugarcane(BlockId blockId, World& world, int x, int y, int z) {
+	if (!hasAdjacentWater(world, x, y, z)) {
+		// No water adjacent, do not allow placing sugarcane
+		return false;
+	}
+	return true;
+}
+// FIXME BUG DOESNT WORK
+bool BlockDatabase::hasAdjacentWater(World& world, int x, int y, int z) {
+	World& nonConstWorld = const_cast<World&>(world);
+
+	if ((nonConstWorld.getBlock(x, y, z + 1) == BlockId::Water) ||
+		(nonConstWorld.getBlock(x, y, z - 1) == BlockId::Water) ||
+		(nonConstWorld.getBlock(x + 1, y, z) == BlockId::Water) ||
+		(nonConstWorld.getBlock(x - 1, y, z) == BlockId::Water)) {
+		return true;
+	}
+	return false;
+}
 
 bool BlockDatabase::canPlaceOnBlock(BlockId blockId, BlockId placeOnThisBlockId)
 {
@@ -139,6 +160,7 @@ bool BlockDatabase::canPlaceOnBlock(BlockId blockId, BlockId placeOnThisBlockId)
 		default:
 			return false;
 		}
+		// FIXME BUG DOESNT WORK
 	case BlockId::SugarCane:
 		if (placeOnThisBlockId == BlockId::SugarCane)
 			return true;

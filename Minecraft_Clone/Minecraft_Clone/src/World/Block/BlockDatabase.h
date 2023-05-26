@@ -6,6 +6,7 @@
 #include "../../Util/Singleton.h"
 #include "../../Util/Random.h"
 
+#include "../World/World.h"
 #include "BlockId.h"
 #include "BlockTypes/BlockType.h"
 
@@ -15,10 +16,15 @@ using Rand = Random<std::minstd_rand>;
 
 class BlockDatabase : public Singleton {
 public:
-	static BlockDatabase &get();
+	static BlockDatabase& get();
+	// FIXME BUG DOESNT WORK
+	bool hasAdjacentWater(World& world, int x, int y, int z);
+	// FIXME BUG DOESNT WORK
+	bool canPlaceSugarcane(BlockId blockId, World& world, int x, int y, int z);
+	// FIXME BUG DOESNT WORK
 	static bool canPlaceOnBlock(BlockId blockId, BlockId placeOnThisBlockId);
-	static BlockId getRandomFlower(Rand &rand);
-	static BlockId getRandomDoubleFlower(Rand &rand);
+	static BlockId getRandomFlower(Rand& rand);
+	static BlockId getRandomDoubleFlower(Rand& rand);
 	static BlockId getDoublePlantMain(BlockId blockId);
 	static BlockId getDoublePlantSecondPart(BlockId blockId);
 
@@ -32,15 +38,14 @@ public:
 	bool isAxe(BlockId blockId);
 
 	bool canPickaxeMine(BlockId toolId, BlockId blockId);
-	
-	const BlockType &getBlock(BlockId id) const;
-	const BlockData &getData(BlockId id) const;
-	
+
+	const BlockType& getBlock(BlockId id) const;
+	const BlockData& getData(BlockId id) const;
+
 	TextureAtlas textureAtlas;
-	
+
 private:
 	BlockDatabase();
-	
-	std::array<std::unique_ptr<BlockType>, (unsigned)BlockId::NUM_TYPES>
-	    m_blocks;
+
+	std::array<std::unique_ptr<BlockType>, (unsigned)BlockId::NUM_TYPES> m_blocks;
 };
