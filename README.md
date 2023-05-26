@@ -34,6 +34,49 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fog
 - Surround sound and music!
 
+Features todo : 
+
+Add Entities in game + Player + Mob spawner + Fall blocks #1
+Add a save game system #2
+Add discord RPC #3
+Add Hud for settings #4
+Add Main Menu #5
+Add A TPS + FPS graph profiler #6
+Add a Creative Menu to Show all blocks in the game #7
+Add a Chat features #8
+Add a #18
+Add F2 + F1 + F5 + F11 Features #18
+Add pick block button (middle click) in creative mod #20 
+Add Command features such as tp position #21
+add Particle system #22
+Add potion system #23
+add enchantment system #24
+add dimension system #25
+
+Fix Todo :
+
+Fix when eat somethings , some textures bugs appear #9
+Fix when i exit the game window without clicking on exit to enable pause menu , the Mouse is used by the game #10 
+Fix sneak mod is not work as intended #11
+Fix water sin't properly updated #12
+Fix can pose sugar cane block without any water #13
+Fix multiple hit on the player don't make damage on the player(it seem thats an display bug) #14
+Fix white Leaves glitch issue when watch leaves above it #16
+Fix biome Blend weird #17
+Fix F12 make crashing the game #26
+Fix F4 make glitch but using Post processing #19
+
+
+Other todo :
+
+Make flying when double press space bar in creative mod instead using key
+Make sure when i break a grass block , that give another block instead of grass block , same for the glowstone, leaves , same for Grass block(only in creative mod)
+Make sure that can eat Apple when moving
+Make nerfing on fall damage
+Make Hurt effect when player get fall damange 
+Make fly mod have infinite block 
+Make sure that block pos and break reach is higher in creative mod
+
 ## Controls
 
 | Button                        | Action                                                         |
