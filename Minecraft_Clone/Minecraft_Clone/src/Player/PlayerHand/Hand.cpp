@@ -139,7 +139,7 @@ bool Hand::update(ChunkBlock block)
 		// animation finished
 		else {
 			m_animationType = AnimationType::Idle;
-			m_handMesh.setAnimationType(m_animationType);
+			//m_handMesh.setAnimationType(m_animationType); // the issue is here
 			m_lastAnimationType = m_animationType;
 			m_animationStage = 0.0f;
 			m_animationTimer.restart();
