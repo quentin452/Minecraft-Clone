@@ -2,6 +2,27 @@
 
 #include "../ChunkBlock.h"
 #include "../BlockTypes/BlockType.h"
+#include "../World/World/world.h"
+// FIXME TODO DOESN4T WORK 
+bool BlockUtils::canPlaceSugarcane(BlockId blockId, World& world, int x, int y, int z) {
+    if (!hasAdjacentWater(world, x, y, z)) {
+        // No water adjacent, do not allow placing sugarcane
+        return false;
+    }
+    return true;
+}
+// FIXME TODO DOESN4T WORK 
+bool BlockUtils::hasAdjacentWater(World& world, int x, int y, int z) {
+    World& nonConstWorld = const_cast<World&>(world);
+
+    if ((nonConstWorld.getBlock(x, y, z + 1) == BlockId::Water) ||
+        (nonConstWorld.getBlock(x, y, z - 1) == BlockId::Water) ||
+        (nonConstWorld.getBlock(x + 1, y, z) == BlockId::Water) ||
+        (nonConstWorld.getBlock(x - 1, y, z) == BlockId::Water)) {
+        return true;
+    }
+    return false;
+}
 
 bool BlockUtils::canPlaceOnBlock(BlockId blockId, BlockId placeOnThisBlockId)
 {
@@ -16,9 +37,9 @@ bool BlockUtils::canPlaceOnBlock(BlockId blockId, BlockId placeOnThisBlockId)
         default:
             return false;
         }
-    case BlockId::SugarCane:
-        if (placeOnThisBlockId == BlockId::SugarCane)
-            return true;
+    //case BlockId::SugarCane:
+   //     if (placeOnThisBlockId == BlockId::SugarCane)
+  //          return true;
     case BlockId::DeadShrub:
         if (placeOnThisBlockId == BlockId::Sand)
             return true;

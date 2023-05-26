@@ -19,7 +19,7 @@ class ChunkManager {
 public:
 	ChunkManager(World *world);
 	
-	Chunk &getChunk(int x, int z);
+	Chunk& getChunk(int x, int z);
 	ChunkMap &getChunks();
 	
 	void deleteMeshes();

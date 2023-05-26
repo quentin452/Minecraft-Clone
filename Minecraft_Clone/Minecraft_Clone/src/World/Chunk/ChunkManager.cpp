@@ -14,17 +14,17 @@ ChunkManager::ChunkManager(World *world)
 	//m_terrainGenerator = std::make_unique<SuperFlatGenerator>();
 }
 
-Chunk &ChunkManager::getChunk(int x, int z)
+Chunk& ChunkManager::getChunk(int x, int z)
 {
-    VectorXZ key{x, z};
-    if (!chunkExistsAt(x, z)) {
-		sf::Vector2i vector{ x,z };
+	VectorXZ key{ x, z };
+	if (!chunkExistsAt(x, z)) {
+		sf::Vector2i vector{ x, z };
 		Chunk chunk{ std::move(vector), m_pWorld };
 
-        m_chunks.emplace(key, std::move(chunk));
-    }
+		m_chunks.emplace(key, std::move(chunk));
+	}
 
-    return m_chunks[key];
+	return m_chunks[key];
 }
 
 ChunkMap &ChunkManager::getChunks()
