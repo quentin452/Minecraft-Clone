@@ -74,6 +74,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Make Hurt effect when player get fall damange 
 - Make fly mod have infinite block 
 - Make sure that block pos and break reach is higher in creative mod
+- Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
 
 ## Controls
 
