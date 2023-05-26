@@ -54,7 +54,6 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 **Fix Todo :**
 
-- Fix when eat somethings , some textures bugs appear [#9](https://github.com/quentin452/Minecraft-Clone/issues/9)
 - Fix when i exit the game window without clicking on exit to enable pause menu , the Mouse is used by the game [#10](https://github.com/quentin452/Minecraft-Clone/issues/10)
 - Fix sneak mod is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
 - Fix water sin't properly updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
