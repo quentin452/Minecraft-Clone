@@ -13,18 +13,12 @@ void ChunkRenderer::add(const ChunkMesh &mesh)
     m_chunks.push_back(&mesh.getModel().getRenderInfo());
 }
 
-void ChunkRenderer::render(const Camera &camera)
+void ChunkRenderer::render(const Camera &camera) //try optimizing this method
 {
     if (m_chunks.empty()) {
         return;
     }
-
-	if (g_Info.fog) {
-		glEnable(GL_BLEND);
-	}
-	else {
-		glDisable(GL_BLEND);
-	}
+	
     glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);
 
@@ -36,7 +30,7 @@ void ChunkRenderer::render(const Camera &camera)
 	m_shader.loadDTime(g_Info.dayTime);
 	m_shader.loadLighting(g_Info.lighting);
 	m_shader.loadFog(g_Info.fog);
-	m_shader.loadFogDensity(g_Config.fogDensity);
+	m_shader.loadFogDensity(g_Config.fogDensity); 
 
     for (auto mesh : m_chunks) {
         GL::bindVAO(mesh->vao);

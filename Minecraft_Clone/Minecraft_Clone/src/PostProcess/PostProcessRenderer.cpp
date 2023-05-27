@@ -40,31 +40,28 @@ void PostProcessRender::render(const Camera& camera, FrameBufferObject& fbo)
 {
 	begin();
 
+	// Clear the FBO's color and depth buffers
+	fbo.bind();
+	fbo.clear();
+
 	if (g_ShaderSettings.motionblur) {
 		mblur.render(camera, fbo);
-		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fbo.m_fbo);
-		glBindFramebuffer(GL_READ_FRAMEBUFFER, mblur.renderer.fbo.m_fbo);
-		glBlitFramebuffer(0, 0, g_RenderSettings.resolutionX, g_RenderSettings.resolutionY, 0, 0
-			, g_RenderSettings.resolutionX, g_RenderSettings.resolutionY, GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT, GL_NEAREST);
-	}
-	if (g_ShaderSettings.fxaa) {
-		antialias.render(fbo.getColorTex());
-		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fbo.m_fbo);
-		glBindFramebuffer(GL_READ_FRAMEBUFFER, antialias.renderer.fbo.m_fbo);
-		glBlitFramebuffer(0, 0, g_RenderSettings.resolutionX, g_RenderSettings.resolutionY, 0, 0
-			, g_RenderSettings.resolutionX, g_RenderSettings.resolutionY, GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT, GL_NEAREST);
-	}
-	if (g_ShaderSettings.bloom) {
-		bloom.render(fbo.getColorTex());
-		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fbo.m_fbo);
-		glBindFramebuffer(GL_READ_FRAMEBUFFER, bloom.renderer.fbo.m_fbo);
-		glBlitFramebuffer(0, 0, g_RenderSettings.resolutionX, g_RenderSettings.resolutionY, 0, 0
-			, g_RenderSettings.resolutionX, g_RenderSettings.resolutionY, GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT, GL_NEAREST);
 	}
 
-	glBindTexture(GL_TEXTURE_2D, fbo.getColorTex()); //Bind final image
+	if (g_ShaderSettings.fxaa) {
+		antialias.render(fbo.getColorTex());
+	}
+
+	if (g_ShaderSettings.bloom) {
+		bloom.render(fbo.getColorTex());
+	}
+
+	// Rebind the main framebuffer before rendering the final post-processing result
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	glBindTexture(GL_TEXTURE_2D, fbo.getColorTex()); // Bind final image
 	finalize();
-	//glEnable(GL_DEPTH_TEST);
+	// glEnable(GL_DEPTH_TEST);
 }
 
 void PostProcessRender::begin()

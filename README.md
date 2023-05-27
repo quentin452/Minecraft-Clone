@@ -61,7 +61,6 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fix multiple hit on the player don't make damage on the player(it seem thats an display bug) [#14](https://github.com/quentin452/Minecraft-Clone/issues/14)
 - Fix white Leaves glitch issue when watch leaves above it [#16](https://github.com/quentin452/Minecraft-Clone/issues/16)
 - Fix biome Blend weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
-- Fix F4 make glitch but using Post processing [#19](https://github.com/quentin452/Minecraft-Clone/issues/19)
 
 **Other todo :**
 
@@ -73,6 +72,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Make fly mod have infinite block 
 - Make sure that block pos and break reach is higher in creative mod
 - Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
+- Make sure that Snow falling are only present in Snow Biomes
 
 ## Controls
 
