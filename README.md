@@ -73,6 +73,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Make sure that block pos and break reach is higher in creative mod
 - Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
 - Make sure that Snow falling are only present in Snow Biomes
+- Make cactus , make hit on the player without needing to move on it
 
 ## Controls
 

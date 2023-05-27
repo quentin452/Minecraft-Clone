@@ -6,6 +6,7 @@
 #include "Player/PlayerInfo.h"
 
 #include <iostream>
+bool isWindowFocused = true;
 
 Application::Application(const Config &config)
     : m_context(config)
@@ -22,22 +23,19 @@ void Application::runLoop()
 {
     sf::Clock dtTimer;
     sf::Clock dt;
-
-    sf::Time m;
-
+    sf::Time m; 
     while (m_context.window.isOpen() && !m_states.empty()) {
-
         auto deltaTime = dtTimer.restart();
-		g_Info.deltaTime = deltaTime.asSeconds();
-        auto &state = *m_states.back();
+        g_Info.deltaTime = deltaTime.asSeconds();
+        auto& state = *m_states.back();
 
-		if (g_PlayerInfo.gameState != GameState::PAUSED) {
-			state.handleInput();
-			state.update(deltaTime.asSeconds());
-			m_camera.update();
-		}
+        if (isWindowFocused && g_PlayerInfo.gameState != GameState::PAUSED) {
+            state.handleInput();
+            state.update(deltaTime.asSeconds());
+            m_camera.update();
+        }
 
-		state.render(m_masterRenderer);
+        state.render(m_masterRenderer);
         m_masterRenderer.finishRender(m_context.window, m_camera);
 
         handleEvents();
@@ -59,41 +57,49 @@ void Application::handleEvents()
     while (m_context.window.pollEvent(e)) {
         m_states.back()->handleEvent(e);
         switch (e.type) {
-            case sf::Event::Closed:
-                m_context.window.close();
-                break;
-
-            case sf::Event::KeyPressed:
-                switch (e.key.code) {
-                    case sf::Keyboard::Enter:
-						if (g_PlayerInfo.gameState == GameState::PAUSED) {
-							g_PlayerInfo.gameState = GameState::PLAYING;
-							g_PlayerInfo.darkScreen = false;
-						}
-                        break;
-					case sf::Keyboard::Escape:
-						if (g_PlayerInfo.gameState == GameState::PAUSED ||
-							g_PlayerInfo.gameState == GameState::DIED) {
-							m_context.window.close();
-						}
-						else if (!g_PlayerInfo.inventoryCursor) {
-							g_PlayerInfo.gameState = GameState::PAUSED;
-							g_PlayerInfo.playerState = PlayerState::NOT_MOVING;
-							g_PlayerInfo.darkScreen = true;
-						}
-						break;
-
-                    default:
-                        break;
+        case sf::Event::Closed:
+            m_context.window.close();
+            break;
+        case sf::Event::KeyPressed:
+            switch (e.key.code) {
+            case sf::Keyboard::Enter:
+                if (g_PlayerInfo.gameState == GameState::PAUSED) {
+                    g_PlayerInfo.gameState = GameState::PLAYING;
+                    g_PlayerInfo.darkScreen = false;
                 }
                 break;
-
-			case sf::Event::MouseWheelMoved:
-				g_PlayerInfo.player->mouseScrollEvent(e.mouseWheel.delta);
-				break;
-
-            default:
-                break;
+            case sf::Keyboard::Escape:
+                if (g_PlayerInfo.gameState == GameState::PAUSED ||
+                    g_PlayerInfo.gameState == GameState::DIED) {
+                    m_context.window.close();
+                }
+                else if (!g_PlayerInfo.inventoryCursor) {
+                    g_PlayerInfo.gameState = GameState::PAUSED;
+                    g_PlayerInfo.playerState = PlayerState::NOT_MOVING;
+                    g_PlayerInfo.darkScreen = true;
+                }
+                break; 
+            }
+            break;
+        case sf::Event::GainedFocus:
+            isWindowFocused = true;
+            break;
+        case sf::Event::LostFocus:
+            isWindowFocused = false;
+            break;
+        case sf::Event::MouseWheelMoved:
+            if (isWindowFocused) {
+                g_PlayerInfo.player->mouseScrollEvent(e.mouseWheel.delta);
+            }
+            break;
+        case sf::Event::MouseButtonPressed:
+        case sf::Event::MouseButtonReleased:
+            if (isWindowFocused) {
+                // Handle mouse button events
+            }
+            break;
+        default:
+            break;
         }
     }
 }
