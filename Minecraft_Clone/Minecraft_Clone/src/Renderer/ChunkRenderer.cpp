@@ -18,7 +18,12 @@ void ChunkRenderer::render(const Camera &camera) //try optimizing this method
     if (m_chunks.empty()) {
         return;
     }
-	
+	if (g_Info.fog) {
+		glEnable(GL_BLEND);
+	}
+	else {
+		glDisable(GL_BLEND);
+	}
     glEnable(GL_CULL_FACE);
 	glEnable(GL_DEPTH_TEST);
 
