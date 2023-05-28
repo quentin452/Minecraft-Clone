@@ -1,24 +1,24 @@
 #include "Player.h"
 
-#include <SFML/Graphics.hpp>
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 
 #include <iomanip>
 #include <sstream>
 #include <memory>
 #include <thread>
 
-#include "Input/Keyboard.h"
-#include "Input/Mouse.h"
-#include "Input/ToggleKey.h"
-#include "Renderer/RenderMaster.h"
-#include "World/World/World.h"
-#include "RenderSettings.h"
+#include "../Input/Keyboard.h"
+#include "../Input/Mouse.h"
+#include "../Input/ToggleKey.h"
+#include "../Renderer/RenderMaster.h"
+#include "../World/World/World.h"
+#include "../RenderSettings.h"
 #include "PlayerInfo.h"
-#include "GlobalInfo.h"
+#include "../GlobalInfo.h"
 #include "PlayerHand/Hand.h"
-#include "Application.h"
-#include "Audio/SoundMaster.h"
-#include "Audio/SoundFunctions.h"
+#include "../Application.h"
+#include "../Audio/SoundMaster.h"
+#include "../Audio/SoundFunctions.h"
 #include "PlayerConstants.h"
 
 #include <iostream>
@@ -381,8 +381,10 @@ void Player::collide(World &world, const glm::vec3 &vel)
 									m_hp -= m_damageMaster.getFallDamage((m_lastTopPosition - position.y) * 0.5f);
 								else
 									m_hp -= m_damageMaster.getFallDamage(m_lastTopPosition - position.y);
+
 								if (lastHP != m_hp) {
 									processFallSound(world);
+									g_SoundMaster.play(SoundId::ClassicHurt);
 									gotDamage = true;
 								}
 								else {

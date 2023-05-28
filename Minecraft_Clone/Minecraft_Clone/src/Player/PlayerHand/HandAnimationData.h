@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GL/glew.h"
-#include "SFML/System.hpp"
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
 
 #include <array>
 

@@ -3,8 +3,8 @@
 #include "../../../Maths/NoiseGenerator.h"
 #include "../../../Util/Random.h"
 #include "../../Block/ChunkBlock.h"
-#include "Util/Array2D.h"
-#include "World/World/WorldConstants.h"
+#include "../../../Util/Array2D.h"
+#include "../../World/WorldConstants.h"
 
 enum class BiomeId
 {

@@ -3,7 +3,7 @@
 #include "Sound/SoundSet.h"
 #include "Music/MusicSet.h"
 
-#include "Entity.h"
+#include "../Entity.h"
 
 #include <memory>
 #include <thread>
@@ -42,7 +42,6 @@ public:
 	void playUnderwaterSound();
 private:
 	void update();
-
 
 	Random<std::minstd_rand> m_random;
 

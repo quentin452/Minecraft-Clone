@@ -2,7 +2,7 @@
 
 #include "../Generation/Terrain/ClassicOverWorldGenerator.h"
 #include "../Generation/Terrain/SuperFlatGenerator.h"
-#include "Item/DroppedItem/DroppedItemsManager.h"
+#include "../../Item/DroppedItem/DroppedItemsManager.h"
 
 #include <future>
 #include <iostream>

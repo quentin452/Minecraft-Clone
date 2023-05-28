@@ -1,7 +1,8 @@
 #include "../Inventory.h"
-
-#include "Application.h"
-
+#include "../../Application.h"
+#include "../../SFML-2.5.0/include/SFML/Graphics.hpp"
+//#include "../../../lib/SFML-2.5.0/x64/include/SFML/Graphics.hpp"
+#include <../../GLEW_64/include/GL/glew.h>
 #include <iostream>
 
 Inventory::Inventory(Player &player, Application &app)
@@ -11,7 +12,6 @@ Inventory::Inventory(Player &player, Application &app)
 	m_slots[8].item.setData(BlockId::Apple, 10);
 
 	m_slots[7].item.setData(BlockId::Glowstone, 64);
-	//m_slots[2].item.setData(BlockId::Sand, 64);
 
 	m_inventoryGUITexture.loadFromFile("Res/Textures/Interface/inventoryGUI.png");
 	m_inventoryGUI.setTexture(&m_inventoryGUITexture);

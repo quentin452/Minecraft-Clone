@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Model.h"
+#include "../../Model.h"
 
-#include "Maths/glm.h"
+#include "../../Maths/glm.h"
 #include <array>
 
 class DroppedItemsMesh {

@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../Util/NonCopyable.h"
-#include "Item/ItemStack.h"
 
 #include <array>
 #include <vector>
+#include "../Item/ItemStack.h"
 
 struct CraftingElement
 {

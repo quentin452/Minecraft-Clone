@@ -1,7 +1,7 @@
 #include "DelineateBlockRenderer.h"
 
-#include "../Camera.h"
-#include "Player/PlayerInfo.h"
+#include "../../Camera.h"
+#include "../../Player/PlayerInfo.h"
 
 #include <iostream>
 

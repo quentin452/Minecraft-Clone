@@ -1,9 +1,9 @@
 #pragma once
 
-#include "SFML/System.hpp"
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
 
 #include "../ItemStack.h"
-#include "Entity.h"
+#include "../../Entity.h"
 
 class World;
 

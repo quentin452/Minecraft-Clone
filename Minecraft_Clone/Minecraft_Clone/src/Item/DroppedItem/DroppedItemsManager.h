@@ -1,9 +1,9 @@
 #pragma once
 
-#include "DroppedItem.h"
-#include "DroppedItemsMesh.h"
+#include "../DroppedItem/DroppedItem.h"
+#include "../DroppedItem/DroppedItemsMesh.h"
 
-#include "World/Chunk/Chunk.h"
+#include "../../World/Chunk/Chunk.h"
 
 #include <list>
 

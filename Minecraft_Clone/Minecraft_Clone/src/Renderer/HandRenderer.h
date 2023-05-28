@@ -1,9 +1,8 @@
 #pragma once
 
-#include "Shaders/HandShader.h"
-#include "Player/PlayerHand/HandData.h"
-
-#include "SFML/System.hpp"
+#include "../Shaders/HandShader.h"
+#include "../Player/PlayerHand/HandData.h"
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
 
 class HandMesh;
 struct RenderInfo;
@@ -20,5 +19,5 @@ private:
 	const RenderInfo * m_mesh;
 
 	const HandData* m_handData;
-	glm::mat4 m_handProjMatrix;
+	glm::mat4 m_handProjMatrix; 
 };

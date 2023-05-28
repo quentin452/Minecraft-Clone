@@ -1,6 +1,7 @@
 #include "TickManager.h"
 
-#include <SFML/System.hpp>
+#include <../../SFML-2.5.0/include/SFML/Window.hpp>
+#include <../../SFML-2.5.0/include/SFML/System.hpp>
 #include <iostream>
 
 TickManager::TickManager()

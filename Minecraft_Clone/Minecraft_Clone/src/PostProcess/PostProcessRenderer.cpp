@@ -6,8 +6,8 @@
 #include "../Maths/Matrix.h"
 #include "../RenderSettings.h"
 #include "../ShaderData.h"
-#include "GlobalInfo.h"
-#include "Player/PlayerInfo.h"
+#include "../GlobalInfo.h"
+#include "../Player/PlayerInfo.h"
 
 PostProcessRender::PostProcessRender()
 {

@@ -1,21 +1,20 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
-
-#include "UserSettings/Config.h"
-#include "ChunkRenderer.h"
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
+#include "../UserSettings/Config.h"
+#include "../Renderer/ChunkRenderer.h"
 #include "AimedBlock/DelineateBlockRenderer.h"
 #include "AimedBlock/BreakBlockRenderer.h"
-#include "FloraRenderer.h"
-#include "SFMLRenderer.h"
-#include "WaterRenderer.h"
-#include "Renderer_2D.h"
-#include "DroppedItemsRenderer.h"
-#include "HandRenderer.h"
+#include "../Renderer/FloraRenderer.h"
+#include "../Renderer/WaterRenderer.h"
+#include "../Renderer/Renderer_2D.h"
+#include "../Renderer/DroppedItemsRenderer.h"
+#include "../Renderer/HandRenderer.h"
 
 #include "../States/PlayingState.h"
 #include "../PostProcess/Framebuffer.h"
 #include "../PostProcess/PostProcessRenderer.h"
+#include "SFMLRenderer.h"
 
 class Camera;
 class ChunkSection;

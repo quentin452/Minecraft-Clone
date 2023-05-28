@@ -1,10 +1,10 @@
 #pragma once
 
-#include "SFML/System.hpp"
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
 
-#include "World/Block/BlockId.h"
+#include "../World/Block/BlockId.h"
 #include "Sound/SoundId.h"
-#include "Entity.h"
+#include "../Entity.h"
 
 sf::Vector3f calculateSoundPosition(sf::Vector3f &diffSoundAndListenerPos, float listenerRotationY);
 

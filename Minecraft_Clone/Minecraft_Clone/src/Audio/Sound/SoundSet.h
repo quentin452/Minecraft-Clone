@@ -1,9 +1,11 @@
 #pragma once
 
-#include "../AudioSet.h"
-#include "Sound.h"
+#include "../../Util/Random.h"
 
-#include "Util/Random.h"
+#include "../AudioSet.h"
+#include "../Sound/Sound.h"
+
+#include "../../Util/Random.h"
 
 #include <vector>
 

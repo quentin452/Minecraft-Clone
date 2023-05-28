@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Texture/TextureAtlas.h"
+#include "../../Texture/TextureAtlas.h"
 
 enum ParameterType {
 	FullHeart = 0,

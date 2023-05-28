@@ -62,7 +62,7 @@ void Application::handleEvents()
             break;
         case sf::Event::KeyPressed:
             switch (e.key.code) {
-            case sf::Keyboard::Enter:
+            case sf::Keyboard::Return:
                 if (g_PlayerInfo.gameState == GameState::PAUSED) {
                     g_PlayerInfo.gameState = GameState::PLAYING;
                     g_PlayerInfo.darkScreen = false;

@@ -5,7 +5,7 @@
 
 #include "Singleton.h"
 
-#include "World/Generation/Seed.h"
+#include "../World/Generation/Seed.h"
 
 class RandomSingleton : public Singleton {
 public:

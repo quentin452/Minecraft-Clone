@@ -1,6 +1,6 @@
 #include "World.h"
 
-#include "Camera.h"
+#include "../../Camera.h"
 
 void World::addUnloadedBlock(int x, int y, int z, ChunkBlock block)
 {

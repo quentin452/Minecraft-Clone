@@ -1,8 +1,8 @@
 #pragma once
 
-#include <SFML/System.hpp>
+#include <../../SFML-2.5.0/include/SFML/System.hpp>
 
-#include "UserSettings/Config.h"
+#include "../../UserSettings/Config.h"
 
 class MovementFOV
 {

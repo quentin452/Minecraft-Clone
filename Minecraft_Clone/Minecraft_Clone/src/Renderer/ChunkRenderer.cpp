@@ -4,7 +4,7 @@
 #include "../World/Chunk/ChunkMesh/ChunkMesh.h"
 
 #include "../Camera.h"
-#include "GlobalInfo.h"
+#include "../GlobalInfo.h"
 
 #include <iostream>
 

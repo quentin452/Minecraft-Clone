@@ -2,8 +2,8 @@
 
 #include "../Application.h"
 #include "../Camera.h"
-#include "Inventory/IconsMesh.h"
-#include "Inventory/IconDatabase.h"
+#include "../Inventory/IconsMesh.h"
+#include "../Inventory/IconDatabase.h"
 
 void Renderer_2D::addMeshToDraw(const IconsMesh & iconsMesh)
 {

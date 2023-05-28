@@ -1,6 +1,6 @@
 #pragma once
 
-#include "World/Block/BlockId.h"
+#include "../World/Block/BlockId.h"
 
 const BlockId EMPTY_SLOT_ID = BlockId::Air;
 

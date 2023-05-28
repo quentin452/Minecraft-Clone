@@ -1,14 +1,14 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 
 #include "../Entity.h"
-#include "Inventory/Inventory.h"
-#include "World/Block/ChunkBlock.h"
-#include "Calculations/DamageMaster.h"
-#include "Calculations/MovementFOV.h"
-#include "Calculations/SneakingCamera.h"
-#include "Calculations/CameraShaking.h"
+#include "../Inventory/Inventory.h"
+#include "../World/Block/ChunkBlock.h"
+#include "../Player/Calculations/DamageMaster.h"
+#include "../Player/Calculations/MovementFOV.h"
+#include "../Player/Calculations/SneakingCamera.h"
+#include "../Player/Calculations/CameraShaking.h"
 
 #include <vector>
 
@@ -23,6 +23,7 @@ class Hand;
 class Player : public Entity {
 public:
 	Player(const Config &config, Application &app);
+	bool m_creativeMode = false;
 	
 	void handleInput(const sf::RenderWindow &window, Mouse &mouse, Keyboard &keyboard, Hand &hand, World &world);
 	void mouseScrollEvent(int delta);
@@ -72,7 +73,6 @@ private:
 	void parametersUpdate();
 	
 	bool m_mouseLocked = false;
-	bool m_creativeMode = false;
 	bool m_isFlying = false;
 	bool m_isOnIce = false;
 	bool m_isMoving = false;

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Util/Random.h"
+#include "../Util/Random.h"
 
-#include "Shaders/Environment/RainShader.h"
-#include "Model.h"
-#include "Camera.h"
-#include "Texture/BasicTexture.h"
+#include "../Shaders/Environment/RainShader.h"
+#include "../Model.h"
+#include "../Camera.h"
+#include "../Texture/BasicTexture.h"
 
 class Camera;
 

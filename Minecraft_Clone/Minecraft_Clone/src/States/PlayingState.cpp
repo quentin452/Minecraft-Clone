@@ -4,13 +4,15 @@
 #include "../Maths/Ray.h"
 #include "../Renderer/RenderMaster.h"
 #include "../World/Event/PlayerDigEvent.h"
-#include "Maths/glm.h"
-#include "Player/PlayerInfo.h"
-#include "World/Generation/Biome/Biome.h"
-#include "Item/Material.h"
-#include "World/Block/BlockDatabase.h"
-#include "Audio/SoundMaster.h"
-#include "Audio/SoundFunctions.h"
+#include "../Maths/glm.h"
+#include "../Player/PlayerInfo.h"
+#include "../World/Generation/Biome/Biome.h"
+#include "../Item/Material.h"
+#include "../World/Block/BlockDatabase.h"
+#include "../Audio/SoundMaster.h"
+#include "../Audio/SoundFunctions.h"
+
+#include <../../GLEW_64/include/GL/glew.h>
 
 #include <iostream>
 
@@ -119,9 +121,11 @@ void StatePlaying::handleInput()
 	//		m_world.reloadChunks();
 	//	}
 	//}
-	if (m_keyboard.toggle(sf::Keyboard::C)) {
-		m_world.reloadChunks();
-	}
+
+	//fixme bug todo , Reload CHunks make lags
+	//if (m_keyboard.toggle(sf::Keyboard::C)) {
+	//	m_world.reloadChunks();
+	//}
 
 	glm::vec3 lastPosition{ 0 };
 
@@ -258,7 +262,6 @@ void StatePlaying::handleInput()
 
 	static sf::Clock eatingPause;
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && !sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-
 		if (heldItem.getData().itemType == ItemType::Food &&
 			m_player.canEat() && !m_player.isRunning() &&
 			eatingPause.getElapsedTime().asSeconds() > 0.15f) {
@@ -288,8 +291,6 @@ void StatePlaying::handleInput()
 		eatingTimer.restart();
 		m_hand.stopEating();
 	}
-
-
 
 	for (Ray ray({ m_player.position.x, m_player.position.y + g_PlayerInfo.cameraPosition, m_player.position.z }
 	, m_player.rotation);

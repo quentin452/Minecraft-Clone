@@ -1,13 +1,13 @@
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <ctime>
+
 #include "SkyManager.h"
 
 #include "../Camera.h"
 #include "../GlobalInfo.h"
-#include "Player/PlayerInfo.h"
-#include "Audio/SoundMaster.h"
-#include "GlobalInfo.h"
-
+#include "../Player/PlayerInfo.h"
+#include "../Audio/SoundMaster.h"
+#include "../GlobalInfo.h"
 #include <iostream>
 
 #define degreesToRadians(x) x*(3.141592f/180.0f)

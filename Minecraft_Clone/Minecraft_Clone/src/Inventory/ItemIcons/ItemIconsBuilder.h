@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
+#include "../../SFML-2.5.0/include/SFML/Graphics.hpp"
 
 class IconsMesh;
 class Inventory;

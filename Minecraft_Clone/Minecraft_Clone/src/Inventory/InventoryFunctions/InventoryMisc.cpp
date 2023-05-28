@@ -1,6 +1,6 @@
 #include "../Inventory.h"
 
-#include "Crafting/Crafting.h"
+#include "../../Crafting/Crafting.h"
 
 ItemStack & Inventory::getHeldItems()
 {

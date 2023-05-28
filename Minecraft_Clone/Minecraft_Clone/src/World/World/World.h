@@ -8,15 +8,15 @@
 #include <list>
 #include <queue>
 
-#include "Util/NonCopyable.h"
-#include "Item/DroppedItem/DroppedItemsManager.h"
+#include "../../Util/NonCopyable.h"
+#include "../../Item/DroppedItem/DroppedItemsManager.h"
 
 #include "../Chunk/Chunk.h"
 #include "../Chunk/ChunkManager.h"
 #include "../Chunk/UnloadedBlock.h"
 #include "../Event/IWorldEvent.h"
 
-#include "UserSettings/Config.h"
+#include "../../UserSettings/Config.h"
 
 class RenderMaster;
 class Camera;

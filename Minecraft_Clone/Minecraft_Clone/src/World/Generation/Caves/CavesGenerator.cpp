@@ -1,8 +1,8 @@
 #include "CavesGenerator.h"
 
 #include "../../Chunk/Chunk.h"
-#include "WormCave.h"
-#include "World/Block/BlockDatabase.h"
+#include "../../../World/Generation/Caves/WormCave.h"
+#include "../../../World/Block/BlockDatabase.h"
 #include "../Seed.h"
 
 static WormCave wormCave;

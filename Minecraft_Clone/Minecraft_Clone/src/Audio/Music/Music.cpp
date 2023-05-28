@@ -1,6 +1,6 @@
 #include "Music.h"
 
-#include "UserSettings/Config.h"
+#include "../../UserSettings/Config.h"
 
 #include <iostream>
 

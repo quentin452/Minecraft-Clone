@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Util/Singleton.h"
+#include "../Util/Singleton.h"
 
-#include "Texture/TextureAtlas.h"
+#include "../Texture/TextureAtlas.h"
 
 class IconDatabase : public Singleton {
 public:

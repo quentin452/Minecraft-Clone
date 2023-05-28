@@ -4,6 +4,7 @@ const Material Material::NOTHING(ID::Nothing,						0, false, "None");
 
 const Material Material::ICE(ID::Ice,								64, true, "Ice");
 const Material Material::GLOWSTONE(ID::Glowstone,					64, true, "Glowstone");
+const Material Material::GLOWSTONEDUST(ID::GlowstoneDust,			64, true, "GlowstoneDust");
 
 const Material Material::GRASS(ID::Grass,							64, true, "Grass Block");
 const Material Material::DIRT(ID::Dirt,								64, true, "Dirt");
@@ -122,6 +123,8 @@ BlockId Material::toBlockID() const
 			return BlockId::Ice;
 		case Glowstone:
 			return BlockId::Glowstone;
+		case GlowstoneDust:
+			return BlockId::GlowstoneDust;
 
         case Grass:
             return BlockId::Grass;
@@ -314,7 +317,8 @@ const Material &Material::toMaterial(BlockId id)
 			return ICE;
 		case BlockId::Glowstone:
 			return GLOWSTONE;
-
+		case BlockId::GlowstoneDust:
+			return GLOWSTONEDUST;
         case BlockId::Grass:
             return GRASS;
         case BlockId::Dirt:

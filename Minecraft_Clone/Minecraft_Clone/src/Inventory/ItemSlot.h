@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Item/ItemStack.h"
-#include <SFML/Graphics.hpp>
+#include "../Item/ItemStack.h"
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 
 enum class SlotId
 {

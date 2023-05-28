@@ -1,8 +1,8 @@
 #pragma once
 
-#include "SFML/System.hpp"
-#include "Maths/glm.h"
-#include "World/Block/BlockId.h"
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
+#include "../Maths/glm.h"
+#include "../World/Block/BlockId.h"
 
 class BlockBreaker
 {

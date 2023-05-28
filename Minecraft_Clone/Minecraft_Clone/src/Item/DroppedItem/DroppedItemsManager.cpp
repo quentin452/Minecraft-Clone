@@ -1,10 +1,10 @@
 #include "DroppedItemsManager.h"
 
-#include "Renderer/RenderMaster.h"
-#include "Camera.h"
-#include "DroppedItemsBuilder.h"
-#include "Audio/SoundMaster.h"
-#include "Audio/SoundFunctions.h"
+#include "../../Renderer/RenderMaster.h"
+#include "../../Camera.h"
+#include "../DroppedItem/DroppedItemsBuilder.h"
+#include "../../Audio/SoundMaster.h"
+#include "../../Audio/SoundFunctions.h"
 
 #include <iostream>
 

@@ -1,6 +1,6 @@
 #include "SoundFunctions.h"
 
-#include "Maths/glm.h"
+#include "../Maths/glm.h"
 #include "SoundMaster.h"
 
 #include <iostream>

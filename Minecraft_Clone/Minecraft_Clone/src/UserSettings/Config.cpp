@@ -1,3 +1,2 @@
-#include "UserSettings/Config.h"
-
+#include "../UserSettings/Config.h"
 Config g_Config;

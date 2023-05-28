@@ -83,7 +83,7 @@ struct Material : public NonCopyable {
 
 		Apple,
 
-		Stick,
+		Stick, GlowstoneDust,
 
 		Diamond,
 		Coal,
@@ -121,7 +121,7 @@ struct Material : public NonCopyable {
 		PEONY_1, PEONY_2, PEONY,
 		ROSE_BUSH_1, ROSE_BUSH_2, ROSE_BUSH,
 		COAL_ORE, IRON_ORE, REDSTONE_ORE, GOLD_ORE, DIAMOND_ORE, EMERALD_ORE,
-		APPLE,
+		APPLE, GLOWSTONEDUST,
 		STICK,
 		DIAMOND, COAL,
 		WOODEN_SWORD, WOODEN_PICKAXE, WOODEN_SHOVEL, WOODEN_AXE,

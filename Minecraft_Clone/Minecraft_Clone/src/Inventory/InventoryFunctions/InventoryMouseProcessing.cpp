@@ -1,6 +1,6 @@
 #include "../Inventory.h"
 
-#include "Input/Mouse.h"
+#include "../../Input/Mouse.h"
 
 void Inventory::mouseInput(const sf::RenderWindow & window, Mouse &mouse)
 {

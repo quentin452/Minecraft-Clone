@@ -1,8 +1,8 @@
 #include "TreeGenerator.h"
 
 #include "../../Chunk/Chunk.h"
-#include "World/Block/BlockDatabase.h"
-#include "StructureBuilder.h"
+#include "../../../World/Block/BlockDatabase.h"
+#include "../Structures/StructureBuilder.h"
 
 constexpr BlockId OAKLEAF = BlockId::OakLeaf;
 constexpr BlockId BIRCHLEAF = BlockId::BirchLeaf;

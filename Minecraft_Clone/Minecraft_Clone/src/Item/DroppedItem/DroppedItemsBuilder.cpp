@@ -5,15 +5,15 @@
 
 #include "Coordinates.h"
 
-#include "World/Block/ChunkBlock.h"
-#include "World/Block/BlockData.h"
-#include "World/Block/BlockDatabase.h"
-#include "World/World/World.h"
+#include "../../World/Block/ChunkBlock.h"
+#include "../../World/Block/BlockData.h"
+#include "../../World/Block/BlockDatabase.h"
+#include "../../World/World/World.h"
 
-#include "RenderSettings.h"
-#include "UserSettings/Config.h"
-#include "Player/PlayerInfo.h"
-#include "Player/Player.h"
+#include "../../RenderSettings.h"
+#include "../../UserSettings/Config.h"
+#include "../../Player/PlayerInfo.h"
+#include "../../Player/Player.h"
 
 #include <iostream>
 

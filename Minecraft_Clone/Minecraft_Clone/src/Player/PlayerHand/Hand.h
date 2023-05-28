@@ -1,10 +1,10 @@
 #pragma once
 
-#include "SFML/System.hpp"
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
 
-#include "HandMesh.h"
-#include "World/Block/ChunkBlock.h"
-#include "HandData.h"
+#include "../PlayerHand/HandMesh.h"
+#include "../../World/Block/ChunkBlock.h"
+#include "../PlayerHand/HandData.h"
 
 class RenderMaster;
 class TextureAtlas;

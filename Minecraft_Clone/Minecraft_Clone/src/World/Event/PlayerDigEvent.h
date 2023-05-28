@@ -1,11 +1,13 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 
 #include "../../Maths/glm.h"
-#include "IWorldEvent.h"
-#include "World/Block/BlockId.h"
-#include "Util/Random.h"
+
+#include "../../World/Event/IWorldEvent.h"
+#include "../../World/Block/BlockId.h"
+
+#include ".././../Util/Random.h"
 
 class Player;
 class Hand;

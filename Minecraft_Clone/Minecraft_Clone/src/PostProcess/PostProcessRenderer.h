@@ -6,7 +6,7 @@
 #include "../Maths/glm.h"
 #include "../Shaders/PostProcessShader.h"
 #include "../Texture/BasicTexture.h"
-#include "UserSettings/Config.h"
+#include "../UserSettings/Config.h"
 #include "../ShaderData.h"
 #include "Framebuffer.h"
 #include "Bloom.h"

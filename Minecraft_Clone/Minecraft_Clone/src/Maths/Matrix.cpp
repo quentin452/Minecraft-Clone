@@ -1,10 +1,11 @@
-#include "Matrix.h"
+#include "../Maths/Matrix.h"
 
 #include "../Camera.h"
 #include "../Entity.h"
 
-#include "UserSettings/Config.h"
-#include "RenderSettings.h"
+#include "../UserSettings/Config.h"
+#include "../RenderSettings.h"
+
 
 glm::mat4 makeModelMatrix(const Entity &entity)
 {

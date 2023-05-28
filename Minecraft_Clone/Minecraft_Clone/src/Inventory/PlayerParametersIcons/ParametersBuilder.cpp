@@ -4,12 +4,12 @@
 #include "../Inventory.h"
 #include "../IconDatabase.h"
 
-#include "World/Block/ChunkBlock.h"
-#include "World/Block/BlockData.h"
+#include "../../World/Block/ChunkBlock.h"
+#include "../../World/Block/BlockData.h"
 
-#include "Player/Player.h"
-#include "Player/PlayerInfo.h"
-#include "RenderSettings.h"
+#include "../../Player/Player.h"
+#include "../../Player/PlayerInfo.h"
+#include "../../RenderSettings.h"
 
 #include <iostream>
 

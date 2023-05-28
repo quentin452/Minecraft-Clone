@@ -1,10 +1,10 @@
 #include "Hand.h"
 
-#include "World/Block/BlockDatabase.h"
-#include "Renderer/RenderMaster.h"
-#include "HandAnimationData.h"
-#include "Audio/SoundMaster.h"
-#include "Audio/SoundFunctions.h"
+#include "../../World/Block/BlockDatabase.h"
+#include "../../Renderer/RenderMaster.h"
+#include "../PlayerHand/HandAnimationData.h"
+#include "../../Audio/SoundMaster.h"
+#include "../../Audio/SoundFunctions.h"
 
 #include <iostream>
 
@@ -41,7 +41,7 @@ void Hand::swing()
 
 void Hand::eat()
 {
-	if (m_animationType != AnimationType::Eating) {
+  if (m_animationType != AnimationType::Eating) {
 		m_animationType = AnimationType::Eating;
 		m_handMesh.setAnimationType(m_animationType);
 		m_animationTimer.restart();
@@ -86,13 +86,13 @@ void Hand::drawHand(RenderMaster & renderer)
 bool Hand::update(ChunkBlock block)
 {
 	bool createMesh = false;
+	bool makeHitSound = false;
 
 	// item changed
 	if (m_lastItemInHand != block.getData().id) {
 		m_lastItemInHand = block.getData().id;
-		
-		if (m_animationType != AnimationType::Breaking) {
 
+		if (m_animationType != AnimationType::Breaking) {
 			m_animationType = AnimationType::Idle;
 			m_handMesh.setAnimationType(m_animationType);
 			m_lastAnimationType = m_animationType;
@@ -112,7 +112,6 @@ bool Hand::update(ChunkBlock block)
 		m_soundMade = false;
 	}
 
-	bool makeHitSound = false;
 	// animation update
 	if (m_animationType != AnimationType::Idle) {
 		if (m_animationStage == 0.0f)
@@ -138,7 +137,10 @@ bool Hand::update(ChunkBlock block)
 		}
 		// animation finished
 		else {
-			m_animationType = AnimationType::Eating;
+			if (m_animationType == AnimationType::Breaking) {
+				makeHitSound = true;
+			}
+			m_animationType = AnimationType::Idle;
 			m_handMesh.setAnimationType(m_animationType);
 			m_lastAnimationType = m_animationType;
 			m_animationStage = 0.0f;
@@ -146,17 +148,18 @@ bool Hand::update(ChunkBlock block)
 
 			createMesh = true;
 			m_soundMade = false;
+
+			if (m_leftMouseHolded && m_rightMouseHolded) {
+				stopEating();
+			}
 		}
 	}
 
 	m_handMesh.setAnimationStage(m_animationStage);
 
 	if (createMesh) {
-		//static int iter = 0;
-		//std::cout << iter++ << "\n";
 		m_handMesh.deleteData();
 
-		// empty hand
 		if (block.getData().id == BlockId::Air) {
 			m_handMesh.setHandType(HandType::Empty);
 			makeEmptyHandMesh();
@@ -308,22 +311,6 @@ void Hand::makeDefaultItemMesh(ChunkBlock& block)
 					m_handMesh.addFace(defaultItemData::sideFaceRight, pixelTexCoords, pos, LIGHT_RIGHT);
 				break;
 			case AnimationType::Eating:
-				// probably remove
-				if (x == 00)
-					m_handMesh.addFace(defaultItemData::sideFaceLeft, pixelTexCoords, pos, LIGHT_RIGHT);
-				else if (pixels[index - 1]->a == 0.0f)
-					m_handMesh.addFace(defaultItemData::sideFaceLeft, pixelTexCoords, pos, LIGHT_RIGHT);
-
-				if (x == indivTextureSize - 1)
-					m_handMesh.addFace(defaultItemData::sideFaceRight, pixelTexCoords, pos, LIGHT_RIGHT);
-				else if (pixels[index + 1]->a == 0.0f)
-					m_handMesh.addFace(defaultItemData::sideFaceRight, pixelTexCoords, pos, LIGHT_RIGHT);
-
-				if (y == 0)
-					m_handMesh.addFace(defaultItemData::sideFaceTop, pixelTexCoords, pos, LIGHT_TOP);
-				else if (pixels[index - indivTextureSize]->a == 0.0f)
-					m_handMesh.addFace(defaultItemData::sideFaceTop, pixelTexCoords, pos, LIGHT_TOP);
-				break;
 			default:
 				break;
 			}

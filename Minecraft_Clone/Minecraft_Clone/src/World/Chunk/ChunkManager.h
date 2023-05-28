@@ -1,9 +1,8 @@
 #pragma once
 
-#include "SFML/System/Vector2.hpp"
-#include "Maths/Vector2XZ.h"
+#include "../../Maths/Vector2XZ.h"
 #include "../Generation/Terrain/TerrainGenerator.h"
-#include "Chunk.h"
+#include "../Chunk/Chunk.h"
 
 #include <functional>
 #include <memory>

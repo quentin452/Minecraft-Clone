@@ -1,7 +1,7 @@
 #include "FPSCounter.h"
 
 #include "../Renderer/RenderMaster.h"
-#include "RenderSettings.h"
+#include "../RenderSettings.h"
 
 #include <iostream>
 

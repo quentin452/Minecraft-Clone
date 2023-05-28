@@ -3,7 +3,7 @@
 #include "../Tick/TickObject.h"
 #define GLM_FORCE_RADIANS
 
-#include <glm/glm.hpp>
+#include "../../glm/glm/glm.hpp"
 #include "../Model.h"
 #include "../Shaders/Environment/SunShader.h"
 #include "../Texture/BasicTexture.h"

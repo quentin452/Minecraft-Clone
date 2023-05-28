@@ -54,26 +54,31 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 **Fix Todo :**
 
-- Fix when i exit the game window without clicking on exit to enable pause menu , the Mouse is used by the game [#10](https://github.com/quentin452/Minecraft-Clone/issues/10)
-- Fix sneak mod is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
+- Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
 - Fix water sin't properly updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
 - Fix can pose sugar cane block without any water [#13](https://github.com/quentin452/Minecraft-Clone/issues/13)
-- Fix multiple hit on the player don't make damage on the player(it seem thats an display bug) [#14](https://github.com/quentin452/Minecraft-Clone/issues/14)
+- Fix firsts hits on player are doesn't work [#14](https://github.com/quentin452/Minecraft-Clone/issues/14)
 - Fix white Leaves glitch issue when watch leaves above it [#16](https://github.com/quentin452/Minecraft-Clone/issues/16)
-- Fix biome Blend weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
+- Fix biome Blend is weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
+- Fix animation bug when change inventory slot
+- Fix animation bug when when left click with apple
+- Fix can walk on the water when press space bar in continue
+Fix texture of glowstone
 
 **Other todo :**
-
-- Make flying when double press space bar in creative mod instead using key
-- Make sure when i break a grass block , that give another block instead of grass block , same for the glowstone, leaves , same for Grass block(only in creative mod)
-- Make sure that can eat Apple when moving
-- Make nerfing on fall damage
-- Make Hurt effect when player get fall damange 
-- Make fly mod have infinite block 
+ 
+- Deduplicate some codes
+- Make Creative mod have infinite block 
+- Make Creative mod don't drops blocks when destroying blocks
+- Make sure when i click on the Middle Click in Creative mode then give the Block in The Inventory
 - Make sure that block pos and break reach is higher in creative mod
 - Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
 - Make sure that Snow falling are only present in Snow Biomes
 - Make cactus , make hit on the player without needing to move on it
+- Make don't place seed on water
+- Make sure that the Dirt Color change in function of biome and not in function of BlockId
+- Make check to don't spawn TallGrass if no block are inside 
+- refactor fxaa to SMAA T2x for post process
 
 ## Controls
 
@@ -91,8 +96,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 | Q                             | Drop held item                                                 |
 | Mouse wheel                   | Previous/next item in toolbar                                  |
 | 0-9                           | Select item in toolbar                                         |
-| +/-          			| Add/subtract 0.5 hour                                          |
-| C                             | Reload chunks                                                  |
+| +/-          			        | Add/subtract 0.5 hour                                          |
 | L                             | Lock mouse                                                     |
 | P                             | Toggle postprocessing                                          |
 | F3                            | Hide/show HUD                                                  |

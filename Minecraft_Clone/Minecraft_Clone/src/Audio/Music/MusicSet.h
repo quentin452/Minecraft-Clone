@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../AudioSet.h"
-#include "Music.h"
+#include "../Music/Music.h"
 
-#include "Util/Random.h"
+#include "../../Util/Random.h"
 
 #include <vector>
 #include <memory>

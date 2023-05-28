@@ -1,7 +1,8 @@
 #pragma once
 
-#include "SFML/System.hpp"
-#include <noise/noise.h>
+#include "../../SFML-2.5.0/include/SFML/System.hpp"
+
+#include <../noise.h>
 
 class Chunk;
 

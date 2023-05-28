@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../Shaders/AimedBlock/DelineateShader.h"
-#include "Model.h"
+#include "../../Shaders/AimedBlock/DelineateShader.h"
+#include "../../Model.h"
 
 struct RenderInfo;
 class Camera;

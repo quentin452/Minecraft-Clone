@@ -1,4 +1,5 @@
 #include "GLFunctions.h"
+#include <GL/glew.h>
 
 void GL::drawElements(GLuint indicesCount) noexcept
 {

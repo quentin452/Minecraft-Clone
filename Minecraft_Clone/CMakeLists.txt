@@ -6,7 +6,6 @@ project(MINECRAFT_CLONE CXX)
 # TODO support debug/release libs
 
 # TODO change to find_library later
-link_directories(Dependencies/GLEW/lib/Release/Win32)
 link_directories(Dependencies/SFML-2.5.1/lib)
 link_directories(Dependencies/libnoise/lib)
 
@@ -15,12 +14,13 @@ add_executable(Minecraft_Library Minecraft_Clone/src/main.cpp "")
 
 add_subdirectory(Minecraft_Clone)
 
+set(CMAKE_TOOLCHAIN_FILE "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/vcpkg/scripts/buildsystems/vcpkg.cmake")
+
 set_property(TARGET Minecraft_Library PROPERTY CXX_STANDARD 17)
 
 target_include_directories(Minecraft_Library PRIVATE Minecraft_Clone/src)
 target_include_directories(Minecraft_Library PRIVATE Minecraft_Clone/src/vendor/)
 target_include_directories(Minecraft_Library PRIVATE Dependencies/SFML-2.5.1/include)
-target_include_directories(Minecraft_Library PRIVATE Dependencies/GLEW/include)
 target_include_directories(Minecraft_Library PRIVATE Dependencies/libnoise/include)
 
 include_directories(Minecraft_Clone/src)

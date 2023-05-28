@@ -3,31 +3,31 @@
 #include "../../Item/Material.h"
 #include "../../Player/Player.h"
 #include "../World/World.h"
-#include "World/Block/BlockDatabase.h"
-#include "Player/PlayerHand/Hand.h"
-#include "Audio/SoundMaster.h"
-#include "Audio/SoundFunctions.h"
+#include "../../World/Block/BlockDatabase.h"
+#include "../../Player/PlayerHand/Hand.h"
+#include "../../Audio/SoundMaster.h"
+#include "../../Audio/SoundFunctions.h"
 
 #include <iostream>
 
-PlayerDigEvent::PlayerDigEvent(sf::Mouse::Button button, const glm::vec3 &location, Player &player, Hand &hand)
-    : m_buttonPress(button)
-    , m_digSpot(location)
-    , m_pPlayer(&player)
+PlayerDigEvent::PlayerDigEvent(sf::Mouse::Button button, const glm::vec3& location, Player& player, Hand& hand)
+	: m_buttonPress(button)
+	, m_digSpot(location)
+	, m_pPlayer(&player)
 	, m_pHand(&hand)
 {
 }
 
-void PlayerDigEvent::handle(World &world)
+void PlayerDigEvent::handle(World& world)
 {
-    auto chunkLocation = World::getChunkXZ(static_cast<int>(m_digSpot.x), static_cast<int>(m_digSpot.z));
+	auto chunkLocation = World::getChunkXZ(static_cast<int>(m_digSpot.x), static_cast<int>(m_digSpot.z));
 
-    if (world.getChunkManager().chunkLoadedAt(chunkLocation.x, chunkLocation.z)) {
+	if (world.getChunkManager().chunkLoadedAt(chunkLocation.x, chunkLocation.z)) {
 		_handle(world);
-    }
+	}
 }
 
-void PlayerDigEvent::_handle(World &world)
+void PlayerDigEvent::_handle(World& world)
 {
 	auto x = m_digSpot.x;
 	auto y = m_digSpot.y;
@@ -117,7 +117,7 @@ void PlayerDigEvent::_handle(World &world)
 	}
 }
 
-void PlayerDigEvent::breakBlocksAbove(World & world, const glm::vec3 &pos)
+void PlayerDigEvent::breakBlocksAbove(World& world, const glm::vec3& pos)
 {
 	float y = pos.y;
 	auto block = world.getBlock(pos.x, y, pos.z);
@@ -156,7 +156,7 @@ void PlayerDigEvent::breakBlocksAbove(World & world, const glm::vec3 &pos)
 	}
 }
 
-void PlayerDigEvent::breakDoublePlant(World & world, const glm::vec3 & pos, BlockId brokenPlant)
+void PlayerDigEvent::breakDoublePlant(World& world, const glm::vec3& pos, BlockId brokenPlant)
 {
 	int secondPartPosition;
 
@@ -182,13 +182,28 @@ void PlayerDigEvent::breakDoublePlant(World & world, const glm::vec3 & pos, Bloc
 		{ BlockDatabase::getDoublePlantMain(brokenPlant), 1 },
 		glm::vec3(floor(pos.x) + 0.5f, floor(pos.y) + 0.5f, floor(pos.z) + 0.5f));
 	if (world.getBlock(pos.x, pos.y + secondPartPosition, pos.z).getData().id == BlockDatabase::getDoublePlantSecondPart(brokenPlant))
-			world.setBlock(pos.x, pos.y + secondPartPosition, pos.z, 0);
+		world.setBlock(pos.x, pos.y + secondPartPosition, pos.z, 0);
 }
 
-void PlayerDigEvent::dropItems(World &world, BlockId blockId, float x, float y, float z, bool &newBlockPlaced)
+void PlayerDigEvent::dropItems(World& world, BlockId blockId, float x, float y, float z, bool& newBlockPlaced)
 {
 	switch (blockId)
 	{
+	case BlockId::BirchLeaf:
+	case BlockId::OakLeaf:
+	case BlockId::PalmLeaf:
+	case BlockId::SpruceLeaf:
+		glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f);
+		if (rand() % 10 == 0) // % 200 in real Minecraft
+			world.addDroppedItem({ BlockId::Apple, 1 },
+				glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
+		break;
+	case BlockId::Grass:
+	case BlockId::TundraGrass:
+	case BlockId::Snow:
+		world.addDroppedItem({ BlockId::Dirt, 1 },
+			glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
+		break;
 	case BlockId::Stone:
 		world.addDroppedItem({ BlockId::Cobblestone, 1 },
 			glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
@@ -201,14 +216,6 @@ void PlayerDigEvent::dropItems(World &world, BlockId blockId, float x, float y, 
 		world.addDroppedItem({ BlockId::Diamond, 1 },
 			glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
 		break;
-	case BlockId::OakLeaf:
-		world.addDroppedItem({ blockId, 1 },
-			glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
-
-		if (rand() % 10 == 0) // % 200 in real Minecraft
-			world.addDroppedItem({ BlockId::Apple, 1 },
-				glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
-		break;
 	case BlockId::Ice:
 		if (y <= WATER_LEVEL + 1) {
 			world.setBlock(x, y, z, BlockId::Water);
@@ -216,11 +223,16 @@ void PlayerDigEvent::dropItems(World &world, BlockId blockId, float x, float y, 
 		}
 		break;
 	case BlockId::Glowstone:
-		world.addDroppedItem({ blockId, 1 },
+	{
+		int quantity = 1 + rand() % 4;
+
+		world.addDroppedItem({ BlockId::GlowstoneDust, quantity },
 			glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
 		world.removeTorchLight(x, y, z);
 		world.updateLitChunks(x, y, z);
 		break;
+	}
+
 	default:
 		world.addDroppedItem({ blockId, 1 },
 			glm::vec3(floor(x) + 0.5f, floor(y) + 0.5f, floor(z) + 0.5f));
@@ -228,7 +240,7 @@ void PlayerDigEvent::dropItems(World &world, BlockId blockId, float x, float y, 
 	}
 }
 
-bool PlayerDigEvent::placeBlock(World & world, BlockId heldItemId, float x, float y, float z)
+bool PlayerDigEvent::placeBlock(World& world, BlockId heldItemId, float x, float y, float z)
 {
 	switch (heldItemId)
 	{

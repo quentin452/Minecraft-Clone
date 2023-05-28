@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Model.h"
-
-#include <SFML/Graphics.hpp>
+#include "../Model.h"
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 #include <array>
 
 class IconsMesh {

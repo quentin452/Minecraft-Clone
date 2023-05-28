@@ -1,9 +1,9 @@
 #include "World.h"
 
-#include "Maths/Vector2XZ.h"
-#include "Player/Player.h"
-#include "Renderer/RenderMaster.h"
-#include "Util/Random.h"
+#include "../../Maths/Vector2XZ.h"
+#include "../../Player/Player.h"
+#include "../../Renderer/RenderMaster.h"
+#include "../../Util/Random.h"
 
 #include "../Chunk/ChunkMesh/ChunkMeshBuilder.h"
 

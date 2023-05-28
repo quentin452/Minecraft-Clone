@@ -1,6 +1,6 @@
 #include "CraftRecipes.h"
 
-#include "World/Block/BlockDatabase.h"
+#include "../World/Block/BlockDatabase.h"
 
 const BlockId EMPTY = BlockId::Air;
 
@@ -70,8 +70,6 @@ const Recipe4 Recipe4::SPRUCE_PLANKS(
 	{ BlockId::SprucePlanks, 4 }
 );
 
-
-
 const Recipe4 Recipe4::STICK(
 	{ BlockId::OakPlanks, BlockId::OakPlanks,
 	EMPTY, EMPTY },
@@ -87,12 +85,11 @@ const Recipe4 Recipe4::CRAFTING_TABLE(
 );
 
 const Recipe4 Recipe4::TORCHES(
-	{ BlockId::Coal, BlockId::Air,
-	BlockId::Stick, BlockId::Air },
+	{ BlockId::GlowstoneDust, BlockId::GlowstoneDust,
+	BlockId::GlowstoneDust, BlockId::GlowstoneDust },
 	// result
-	{ BlockId::Glowstone, 4 }
+	{ BlockId::Glowstone, 1 }
 );
-
 
 
 

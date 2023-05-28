@@ -1,9 +1,10 @@
 #pragma once
 
-#include "Model.h"
-#include "HandData.h"
+#include "../../Model.h"
+#include "../PlayerHand/HandData.h"
 
-#include "Maths/glm.h"
+#include "../../Maths/glm.h"
+
 #include <array>
 #include <vector>
 

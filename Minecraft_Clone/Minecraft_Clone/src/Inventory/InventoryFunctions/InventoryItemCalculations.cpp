@@ -1,11 +1,10 @@
 #include "../Inventory.h"
 
-#include "Player/PlayerInfo.h"
+#include "../../Player/PlayerInfo.h"
 
-#include "Player/Player.h"
-#include "Item/DroppedItem/DroppedItemsManager.h"
-#include "Audio/SoundMaster.h"
-
+#include "../../Player/Player.h"
+#include "../../Item/DroppedItem/DroppedItemsManager.h"
+#include "../../Audio/SoundMaster.h"
 #include <iostream>
 
 int Inventory::addItems(BlockId blockId, int number, int callNumber)

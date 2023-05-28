@@ -1,11 +1,11 @@
 #include "HandRenderer.h"
 
-#include "World/Block/BlockDatabase.h"
-#include "GlobalInfo.h"
-#include "Player/PlayerInfo.h"
-#include "Camera.h"
-#include "Player/PlayerHand/HandMesh.h"
-#include "RenderSettings.h"
+#include "../World/Block/BlockDatabase.h"
+#include "../GlobalInfo.h"
+#include "../Player/PlayerInfo.h"
+#include "../Camera.h"
+#include "../Player/PlayerHand/HandMesh.h"
+#include "../RenderSettings.h"
 
 #include <iostream>
 
@@ -23,7 +23,7 @@ void HandRenderer::addMeshToDraw(const HandMesh & handMesh)
 	if (doItOnce) {
 		doItOnce = 0;
 
-		m_mesh = &handMesh.getModel().getRenderInfo();
+		m_mesh = &handMesh.getModel().getRenderInfo(); 
 		m_handData = &handMesh.getHandData();
 	}
 }

@@ -1,10 +1,9 @@
 #include "BreakBlockRenderer.h"
 
-#include "../Camera.h"
-#include "Player/PlayerInfo.h"
-#include "GlobalInfo.h"
-#include "World/Block/BlockDatabase.h"
-
+#include "../../Camera.h"
+#include "../../Player/PlayerInfo.h"
+#include "../../GlobalInfo.h"
+#include "../../World/Block/BlockDatabase.h"
 #include <iostream>
 
 const float bias = 0.005f;

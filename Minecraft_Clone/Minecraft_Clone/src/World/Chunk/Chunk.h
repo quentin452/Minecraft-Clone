@@ -1,9 +1,10 @@
 #pragma once
 
-#include "Util/Array2D.h"
-#include "Util/NonCopyable.h"
-#include "ChunkSection.h"
-#include "UnloadedBlock.h"
+#include "../../Util/Array2D.h"
+#include "../../Util/NonCopyable.h"
+
+#include "../Chunk/ChunkSection.h"
+#include "../Chunk/UnloadedBlock.h"
 
 #include <vector>
 

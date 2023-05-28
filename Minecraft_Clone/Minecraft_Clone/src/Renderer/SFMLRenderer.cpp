@@ -1,7 +1,6 @@
 #include "SFMLRenderer.h"
 
 #include "GL/glew.h"
-
 void SFMLRenderer::add(const sf::Drawable &drawable)
 {
     m_draws.push_back(&drawable);

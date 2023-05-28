@@ -2,7 +2,7 @@
 
 #include "GL/glew.h"
 
-#include <SFML/Graphics.hpp>
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 #include <string>
 
 #include "../Util/NonCopyable.h"

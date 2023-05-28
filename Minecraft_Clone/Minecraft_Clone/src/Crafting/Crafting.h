@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Inventory/ItemSlot.h"
+#include "../Inventory/ItemSlot.h"
 
 #include <array>
 

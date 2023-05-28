@@ -1,8 +1,7 @@
 #pragma once
 
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/Keyboard.hpp>
-
+#include <../../SFML-2.5.0/include/SFML/Window/Event.hpp>
+#include <../../SFML-2.5.0/include/SFML/Window/Keyboard.hpp>
 #include <array>
 
 enum class KeyState

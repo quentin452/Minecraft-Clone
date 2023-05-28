@@ -1,6 +1,6 @@
 #include "../BlockId.h"
-#include "../World/World/world.h"
-#include "Util/Random.h"
+#include "../../../World/World/World.h"
+#include "../../../Util/Random.h"
 
 using Rand = Random<std::minstd_rand>;
 

@@ -9,7 +9,7 @@
 #include "../Structures/ClusterGenerator.h"
 #include "../Caves/CavesGenerator.h"
 #include "../Caves/WormCave.h"
-#include "World/Block/BlockDatabase.h"
+#include "../../../World/Block/BlockDatabase.h"
 #include "../Seed.h"
 
 #include <array>

@@ -2,9 +2,9 @@
 
 #include "../IconDatabase.h"
 #include "../Inventory.h"
-#include "World/Block/ChunkBlock.h"
-#include "World/Block/BlockData.h"
-#include "Renderer/RenderMaster.h"
+#include "../../World/Block/ChunkBlock.h"
+#include "../../World/Block/BlockData.h"
+#include "../../Renderer/RenderMaster.h"
 
 #include <iostream>
 

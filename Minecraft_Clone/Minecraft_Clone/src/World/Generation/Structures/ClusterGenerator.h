@@ -1,10 +1,9 @@
 #pragma once
 
 #include "../../../Util/Random.h"
-#include "World/Block/BlockId.h"
-#include "Util/Array2D.h"
-#include "World/World/WorldConstants.h"
-
+#include "../../../World/Block/BlockId.h"
+#include "../../../Util/Array2D.h"
+#include "../../World/WorldConstants.h"
 class Chunk;
 
 namespace ClusterGenerator {

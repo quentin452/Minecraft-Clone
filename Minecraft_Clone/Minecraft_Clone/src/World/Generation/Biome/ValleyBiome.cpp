@@ -2,7 +2,7 @@
 
 #include "../Structures/TreeGenerator.h"
 #include "../Structures/ClusterGenerator.h"
-#include "World/Block/BlockDatabase.h"
+#include "../../../World/Block/BlockDatabase.h"
 
 ValleyBiome::ValleyBiome(int seed)
 	: Biome(getNoiseParameters(),

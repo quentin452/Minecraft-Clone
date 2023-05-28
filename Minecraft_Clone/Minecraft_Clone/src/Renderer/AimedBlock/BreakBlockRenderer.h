@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../Shaders/AimedBlock/BreakBlockShader.h"
-#include "Model.h"
+#include "../../Shaders/AimedBlock/BreakBlockShader.h"
+#include "../../Model.h"
 
 struct RenderInfo;
 class Camera;

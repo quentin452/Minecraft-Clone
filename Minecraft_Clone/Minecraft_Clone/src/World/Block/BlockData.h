@@ -2,7 +2,7 @@
 
 #include "../../Util/NonCopyable.h"
 #include "BlockId.h"
-#include <SFML/Graphics.hpp>
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 
 // this should be refactored to much more classes with inheritance and so on
 enum class ItemType {
@@ -10,6 +10,7 @@ enum class ItemType {
 	Block = 1,
 	Tool = 2,
 	Food = 3,
+	Item = 4,
 };
 
 enum class BlockMeshType {

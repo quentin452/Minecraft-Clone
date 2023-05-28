@@ -1,6 +1,6 @@
 #include "RenderMaster.h"
 
-#include <SFML/Graphics.hpp>
+#include <../../SFML-2.5.0/include/SFML/Graphics.hpp>
 #include <iostream>
 
 #include "../Application.h"
@@ -8,13 +8,13 @@
 #include "../World/Chunk/ChunkMesh/ChunkMesh.h"
 #include "../World/Chunk/ChunkSection.h"
 
-#include "UserSettings/Config.h"
+#include "../UserSettings/Config.h"
 #include "../RenderSettings.h"
 #include "../ShaderData.h"
-#include "Inventory/IconsMesh.h"
-#include "Player/PlayerInfo.h"
+#include "../Inventory/IconsMesh.h"
+#include "../Player/PlayerInfo.h"
 
-#include "World/Block/BlockDatabase.h"
+#include "../World/Block/BlockDatabase.h"
 
 RenderMaster::RenderMaster()
 	: m_fbo(0, 0)

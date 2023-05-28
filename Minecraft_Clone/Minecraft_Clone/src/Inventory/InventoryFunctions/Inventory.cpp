@@ -1,9 +1,9 @@
 #include "../Inventory.h"
 
-#include "Player/PlayerInfo.h"
-#include "GlobalInfo.h"
+#include "../../Player/PlayerInfo.h"
+#include "../../GlobalInfo.h"
 
-#include "Renderer/RenderMaster.h"
+#include "../../Renderer/RenderMaster.h"
 #include "../ItemIcons/ItemIconsBuilder.h"
 #include "../PlayerParametersIcons/ParametersBuilder.h"
 

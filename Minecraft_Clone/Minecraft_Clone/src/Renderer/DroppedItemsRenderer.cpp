@@ -2,8 +2,8 @@
 
 #include "../Application.h"
 #include "../Camera.h"
-#include "Item/DroppedItem/DroppedItemsMesh.h"
-#include "World/Block/BlockDatabase.h"
+#include "../Item/DroppedItem/DroppedItemsMesh.h"
+#include "../World/Block/BlockDatabase.h"
 
 #include <iostream>
 

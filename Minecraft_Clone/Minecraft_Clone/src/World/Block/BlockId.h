@@ -90,6 +90,7 @@ enum class BlockId : Block_t {
 	Cobblestone = 82,
 	Diamond = 83,
 	Glowstone = 84,
+	GlowstoneDust = 85,
 
     NUM_TYPES
 };

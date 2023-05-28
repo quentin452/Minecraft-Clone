@@ -3,7 +3,7 @@
 #include <vector>
 
 //#include "SkyManager.h"
-#include "GlobalInfo.h"
+#include "../GlobalInfo.h"
 
 ProcSky::ProcSky()
 {

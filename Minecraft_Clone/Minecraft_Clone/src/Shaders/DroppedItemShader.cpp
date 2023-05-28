@@ -1,6 +1,6 @@
 #include "DroppedItemShader.h"
 
-#include "GlobalInfo.h"
+#include "../GlobalInfo.h"
 
 DroppedItemShader::DroppedItemShader()
 	: BasicShader("DroppedItem", "DroppedItem")

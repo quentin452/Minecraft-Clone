@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../Util/Random.h"
-#include "Util/Array2D.h"
-#include "World/World/WorldConstants.h"
+#include "../../../Util/Array2D.h"
+#include "../../World/WorldConstants.h"
 
 class Chunk;
 

@@ -1,6 +1,6 @@
-#include "Seed.h"
+#include "../../World/Generation/Seed.h"
 
-#include "Util/Random.h"
+#include "../../Util/Random.h"
 
 // Seed affects only terrain now
 int g_Seed = RandomSingleton::get().intInRange(424, 325322);

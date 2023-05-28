@@ -1,6 +1,6 @@
 #include "WaterShader.h"
 
-#include "GlobalInfo.h"
+#include "../GlobalInfo.h"
 
 WaterShader::WaterShader()
     : BasicShader("Water", "Water")

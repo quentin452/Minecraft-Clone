@@ -1,6 +1,6 @@
 #include "HandShader.h"
 
-#include "Player/PlayerInfo.h"
+#include "../Player/PlayerInfo.h"
 
 HandShader::HandShader()
 	: BasicShader("Hand", "Hand")

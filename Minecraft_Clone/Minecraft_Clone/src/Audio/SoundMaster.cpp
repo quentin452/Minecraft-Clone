@@ -1,10 +1,9 @@
 #include "SoundMaster.h"
 
 #include "SoundFunctions.h"
-#include "GlobalInfo.h"
-#include "Player/Player.h"
-#include "Player/PlayerInfo.h"
-
+#include "../GlobalInfo.h"
+#include "../Player/Player.h"
+#include "../Player/PlayerInfo.h"
 #include <iostream>
 #include <functional>
 

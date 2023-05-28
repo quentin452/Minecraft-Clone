@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SFML/System/Vector3.hpp"
+#include "../../SFML-2.5.0/include/SFML/System/Vector3.hpp"
 #include "../Block/ChunkBlock.h"
 
 struct UnloadedBlock

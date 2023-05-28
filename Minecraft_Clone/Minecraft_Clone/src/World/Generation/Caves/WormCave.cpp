@@ -1,9 +1,8 @@
 #include "WormCave.h"
 
-#include <noise/mathconsts.h>
 //#include "World/Chunk/Chunk.h"
-#include "World/World/World.h"
-
+#include "../../../World/World/World.h"
+#include <../../LibNoise/mathconsts.h>
 #include <iostream>
 
 // Default values

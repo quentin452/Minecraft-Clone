@@ -1,8 +1,8 @@
 #include "ClusterGenerator.h"
 
 #include "../../Chunk/Chunk.h"
-#include "TreeGenerator.h"
-#include "World/Block/BlockDatabase.h"
+#include "../Structures/TreeGenerator.h"
+#include "../../../World/Block/BlockDatabase.h"
 
 #include <iostream>
 #include <vector>

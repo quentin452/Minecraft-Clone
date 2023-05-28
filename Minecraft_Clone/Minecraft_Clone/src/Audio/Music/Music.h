@@ -1,7 +1,7 @@
 #pragma once
 
 #include "MusicId.h"
-#include "SFML/Audio.hpp"
+#include "../../SFML-2.5.0/include/SFML/Audio.hpp"
 
 #include <string>
 
