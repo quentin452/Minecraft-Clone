@@ -187,6 +187,10 @@ void PlayerDigEvent::breakDoublePlant(World& world, const glm::vec3& pos, BlockI
 
 void PlayerDigEvent::dropItems(World& world, BlockId blockId, float x, float y, float z, bool& newBlockPlaced)
 {
+	// Check if the player is in Creative mode
+	bool isInCreativeMode = m_pPlayer->isInCreativeMove();
+
+	if (!isInCreativeMode) {
 	switch (blockId)
 	{
 	case BlockId::BirchLeaf:
@@ -239,6 +243,7 @@ void PlayerDigEvent::dropItems(World& world, BlockId blockId, float x, float y, 
 		break;
 	}
 }
+}
 
 bool PlayerDigEvent::placeBlock(World& world, BlockId heldItemId, float x, float y, float z)
 {
@@ -287,6 +292,5 @@ bool PlayerDigEvent::placeBlock(World& world, BlockId heldItemId, float x, float
 		world.setBlock(x, y, z, heldItemId);
 		break;
 	}
-
 	return true;
 }

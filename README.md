@@ -3,6 +3,7 @@
 Developed using C++, OpenGL, SFML, libnoise.<br/>
 OpenGL 3.3 or later is required.<br/>
 All textures, music and sound belong to the creators of Minecraft.<br/>
+The game is compiled in 64 bits<br/>
 
 ## The game:
 https://github.com/Aidanhouk/Minecraft-Clone/releases/tag/v1.0
@@ -55,30 +56,27 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 **Fix Todo :**
 
 - Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
-- Fix water sin't properly updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
+- Fix water isn't updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
 - Fix can pose sugar cane block without any water [#13](https://github.com/quentin452/Minecraft-Clone/issues/13)
 - Fix firsts hits on player are doesn't work [#14](https://github.com/quentin452/Minecraft-Clone/issues/14)
 - Fix white Leaves glitch issue when watch leaves above it [#16](https://github.com/quentin452/Minecraft-Clone/issues/16)
 - Fix biome Blend is weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
-- Fix animation bug when change inventory slot
-- Fix animation bug when when left click with apple
 - Fix can walk on the water when press space bar in continue
-Fix texture of glowstone
+- Fix texture of glowstonedust
+- Fix when left click with apple (eating) i got duplicate animation
+- Fix when try to add a precraft like stick + crafting table , only one of this craft is gived(the issue only appear when make an shift click)
+- Fix animation bug when change inventory slot 
 
 **Other todo :**
  
 - Deduplicate some codes
-- Make Creative mod have infinite block 
-- Make Creative mod don't drops blocks when destroying blocks
 - Make sure when i click on the Middle Click in Creative mode then give the Block in The Inventory
-- Make sure that block pos and break reach is higher in creative mod
 - Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
-- Make sure that Snow falling are only present in Snow Biomes
 - Make cactus , make hit on the player without needing to move on it
-- Make don't place seed on water
 - Make sure that the Dirt Color change in function of biome and not in function of BlockId
-- Make check to don't spawn TallGrass if no block are inside 
-- refactor fxaa to SMAA T2x for post process
+- Make check to don't spawn TallGrass if no block are underneath 
+- Make Creative mod have infinite block
+- Upgrade inventory mouse processing functionality 
 
 ## Controls
 

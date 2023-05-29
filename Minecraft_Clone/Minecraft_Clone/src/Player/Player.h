@@ -22,17 +22,20 @@ class Hand;
 
 class Player : public Entity {
 public:
-	Player(const Config &config, Application &app);
+	static bool m_creativeMove;
+	Player(const Config& config, Application& app);
+	void handleMiddleClick();
+	BlockId getWatchedBlock();
 	bool m_creativeMode = false;
-	
-	void handleInput(const sf::RenderWindow &window, Mouse &mouse, Keyboard &keyboard, Hand &hand, World &world);
+
+	void handleInput(const sf::RenderWindow& window, Mouse& mouse, Keyboard& keyboard, Hand& hand, World& world);
 	void mouseScrollEvent(int delta);
-	
-	void update(float dt, World &wolrd);
+
+	void update(float dt, World& world);
 
 	int addItem(BlockId blockID, int number);
 	void removeHeldItem(int number);
-	ItemStack &getHeldItems();
+	ItemStack& getHeldItems();
 
 	int getHP() const { return m_hp; }
 	int getOxygen() const { return m_oxygen; }
@@ -41,8 +44,8 @@ public:
 	bool isFlying() const { return m_isFlying; }
 	bool isRunning() const { return m_isRunning; }
 
-	void drawGUI(RenderMaster &master);
-	void drawInventory(RenderMaster &master);
+	void drawGUI(RenderMaster& master);
+	void drawInventory(RenderMaster& master);
 
 	void setDroppedItemsManager(DroppedItemsManager* manager);
 
@@ -56,22 +59,22 @@ private:
 	void statsUpdate(float dt);
 	void decreaseSaturation();
 	void reachCertainSpeed(float neededSpeed, float howFastReachIt);
-	void collide(World &world, const glm::vec3 &vel);
-	bool sneakyFallCheck(float dt, World &world);
-	void movementStops(float dt, World &world);
-	void movementInWater(World &world);
+	void collide(World& world, const glm::vec3& vel);
+	bool sneakyFallCheck(float dt, World& world);
+	void movementStops(float dt, World& world);
+	void movementInWater(World& world);
 	void movementOnIce();
 
-	void processStepSound(World &world);
-	void processFallSound(World &world);
-	
-	void keyboardInput(Keyboard &keyboard, World &world);
-	void mouseInput(const sf::RenderWindow &window);
-	
-	void jump(World &world);
+	void processStepSound(World& world);
+	void processFallSound(World& world);
+
+	void keyboardInput(Keyboard& keyboard, World& world);
+	void mouseInput(const sf::RenderWindow& window);
+
+	void jump(World& world);
 
 	void parametersUpdate();
-	
+
 	bool m_mouseLocked = false;
 	bool m_isFlying = false;
 	bool m_isOnIce = false;
@@ -99,13 +102,13 @@ private:
 
 	sf::Clock m_jumpDelayTimer;
 	sf::Clock m_fallDelayTimer;
-	
+
 	Inventory m_Inventory;
 	sf::Text m_playerInfo;
 	sf::Font m_font;
-	
+
 	glm::vec3 m_acceleration;
-	
+
 	DamageMaster m_damageMaster;
 	MovementFOV m_movementFOV;
 	SneakingCamera m_sneakingCamera;

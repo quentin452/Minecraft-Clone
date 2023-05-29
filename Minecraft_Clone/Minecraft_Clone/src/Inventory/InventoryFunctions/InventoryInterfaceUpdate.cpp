@@ -7,7 +7,6 @@
 #include <../../GLEW_64/include/GL/glew.h>
 #include <iostream>
 #include <string>
-#include <sstream> 
 
 void Inventory::updateHeldItemFrame()
 {
@@ -22,46 +21,46 @@ void Inventory::updateHeldItemFrame()
 
 void Inventory::updateToolbarText()
 {
-	auto & material = Material::toMaterial(m_slots[m_heldItemIndex].item.getBlockId());
+	auto& material = Material::toMaterial(m_slots[m_heldItemIndex].item.getBlockId());
 	m_toolbarItemText.setString(material.name);
 	m_toolbarItemText.setOrigin(
 		m_toolbarItemText.getGlobalBounds().width / 2,
 		m_toolbarItemText.getGlobalBounds().height);
 }
-sf::Vector2i m_lastMousePos;
+
 void Inventory::updateInventoryText(sf::Vector2i& mousePos)
 {
-	if (!m_pPointedSlot || m_lastMousePos == mousePos)
+	if (!m_pPointedSlot)
 		return;
-
-	m_lastMousePos = mousePos;
 
 	BlockId itemId = m_pPointedSlot->item.getBlockId();
 	auto& material = Material::toMaterial(itemId);
 	auto& blockData = ChunkBlock(itemId).getData();
 
 	if (blockData.itemType == ItemType::Tool) {
-		float efficiency = blockData.effieciencyCoef;
-		int efficiencyInt = static_cast<int>(efficiency);
+		float efficiency = ChunkBlock(itemId).getData().effieciencyCoef;
+		int efficiencyInt = (int)efficiency;
 		int efficiencyDecimal = (efficiency - efficiencyInt) * 100;
 
-		std::ostringstream oss;
+		std::string str;
 		if (BlockDatabase::get().isSword(itemId))
-			oss << "Attack Damage: ";
+			str = "Attack Damage: ";
 		else
-			oss << "Mining Speed: x";
+			str = "Mining Speed: x";
 
-		oss << material.name << "\n\n"
-			<< oss.str() << efficiencyInt << "." << efficiencyDecimal << "\n"
-			<< "Durability: " << m_pPointedSlot->item.getToolDurability() << " / "
-			<< m_pPointedSlot->item.getMaxToolDurability();
-
-		m_inventoryItemText.setString(oss.str());
+		m_inventoryItemText.setString(material.name
+			+ "\n\n" + str + std::to_string(efficiencyInt) + "." + std::to_string(efficiencyDecimal)
+			+ "\nDurability: " + std::to_string(m_pPointedSlot->item.getToolDurability())
+			+ " / " + std::to_string(m_pPointedSlot->item.getMaxToolDurability())
+		);
 		m_inventoryItemText.setPosition(
-			mousePos.x + 15 * m_invPixelSize, mousePos.y - 17.5f * m_invPixelSize);
+			//mousePos.x + 15 * m_invPixelSize, mousePos.y - 19.0f * m_invPixelSize // for 3 strings of text
+			mousePos.x + 15 * m_invPixelSize, mousePos.y - 17.5f * m_invPixelSize
+		);
 
 		m_itemTextBackground.setPosition(
-			mousePos.x + 8 * m_invPixelSize, mousePos.y - 23 * m_invPixelSize);
+			mousePos.x + 8 * m_invPixelSize, mousePos.y - 23 * m_invPixelSize
+		);
 		m_itemTextBackground.setSize(sf::Vector2f(
 			55.0f * m_invPixelSize / 4.023f + m_inventoryItemText.getLocalBounds().width,
 			4 * m_backgroundHeightOneString));
@@ -69,10 +68,12 @@ void Inventory::updateInventoryText(sf::Vector2i& mousePos)
 	else {
 		m_inventoryItemText.setString(material.name);
 		m_inventoryItemText.setPosition(
-			mousePos.x + 15 * m_invPixelSize, mousePos.y - 22 * m_invPixelSize);
+			mousePos.x + 15 * m_invPixelSize, mousePos.y - 22 * m_invPixelSize
+		);
 
 		m_itemTextBackground.setPosition(
-			mousePos.x + 8 * m_invPixelSize, mousePos.y - 23 * m_invPixelSize);
+			mousePos.x + 8 * m_invPixelSize, mousePos.y - 23 * m_invPixelSize
+		);
 		m_itemTextBackground.setSize(sf::Vector2f(
 			55.0f * m_invPixelSize / 4.023f + m_inventoryItemText.getLocalBounds().width,
 			m_backgroundHeightOneString));
@@ -151,7 +152,7 @@ void Inventory::updateToolsDurBarGrabbedItem()
 	}
 }
 
-void Inventory::createToolDurabilityBar(ItemSlot * itemSlot)
+void Inventory::createToolDurabilityBar(ItemSlot* itemSlot)
 {
 	if (itemSlot->item.getToolDurability() > 0 &&
 		itemSlot->item.getToolDurability() < itemSlot->item.getMaxToolDurability()) {

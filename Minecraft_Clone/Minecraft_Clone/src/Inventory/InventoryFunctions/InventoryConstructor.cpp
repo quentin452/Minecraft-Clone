@@ -9,6 +9,7 @@ Inventory::Inventory(Player &player, Application &app)
 	: m_pPlayer{ &player },
 	m_updateIcons{ true }
 {
+	m_slots[6].item.setData(BlockId::StoneAxe, 10);
 	m_slots[8].item.setData(BlockId::Apple, 10);
 
 	m_slots[7].item.setData(BlockId::Glowstone, 64);
@@ -156,72 +157,45 @@ void Inventory::setToolbarSlotsPositions(const sf::Vector2i &toolbarStartPos)
 	}
 }
 
-void Inventory::setArmorSlotsPositions(const sf::Vector2i &armorStartPos)
+void Inventory::setArmorSlotsPositions(const sf::Vector2i& armorStartPos)
 {
-	m_armorSlots[0].position.x = armorStartPos.x;
-	m_armorSlots[0].position.y = armorStartPos.y;
-	//m_armorSlots[0].slotId = SlotId::Armor_0;
-
-	m_armorSlots[1].position.x = armorStartPos.x;
-	m_armorSlots[1].position.y = armorStartPos.y + 1 * m_invDistanceBetweenSlots;
-	//m_armorSlots[0].slotId = SlotId::Armor_1;
-
-	m_armorSlots[2].position.x = armorStartPos.x;
-	m_armorSlots[2].position.y = armorStartPos.y + 2 * m_invDistanceBetweenSlots;
-	//m_armorSlots[0].slotId = SlotId::Armor_2;
-
-	m_armorSlots[3].position.x = armorStartPos.x;
-	m_armorSlots[3].position.y = armorStartPos.y + 3 * m_invDistanceBetweenSlots;
-	//m_armorSlots[0].slotId = SlotId::Armor_3;
+	for (int i = 0; i < 4; ++i) {
+		m_armorSlots[i].position.x = armorStartPos.x;
+		m_armorSlots[i].position.y = armorStartPos.y + i * m_invDistanceBetweenSlots;
+		//m_armorSlots[i].slotId = static_cast<SlotId>(i);
+	}
 }
 
-void Inventory::setCraftingSlotsPositions(const sf::Vector2i &craftingStartPos)
+void Inventory::setCraftingSlotsPositions(const sf::Vector2i& craftingStartPos)
 {
-	m_craftSlots[0].position.x = craftingStartPos.x;
-	m_craftSlots[0].position.y = craftingStartPos.y;
-	//m_armorSlots[0].slotId = SlotId::Craft_0;
-	m_craftSlots[1].position.x = craftingStartPos.x + m_invDistanceBetweenSlots;
-	m_craftSlots[1].position.y = craftingStartPos.y;
-	//m_armorSlots[0].slotId = SlotId::Craft_1;
-	m_craftSlots[2].position.x = craftingStartPos.x;
-	m_craftSlots[2].position.y = craftingStartPos.y + m_invDistanceBetweenSlots;
-	//m_armorSlots[0].slotId = SlotId::Craft_2;
-	m_craftSlots[3].position.x = craftingStartPos.x + m_invDistanceBetweenSlots;
-	m_craftSlots[3].position.y = craftingStartPos.y + m_invDistanceBetweenSlots;
-	//m_armorSlots[0].slotId = SlotId::Craft_3;
+	for (int i = 0; i < 4; ++i) {
+		int xOffset = (i % 2) * m_invDistanceBetweenSlots;
+		int yOffset = (i / 2) * m_invDistanceBetweenSlots;
 
-	m_craftResultSlot.position.x = craftingStartPos.x + 2 * m_invDistanceBetweenSlots
-		+ 20.0f * m_invPixelSize;
-	m_craftResultSlot.position.y = craftingStartPos.y + m_invDistanceBetweenSlots / 2.0f
-		+ m_invPixelSize;
-	//m_armorSlots[0].slotId = SlotId::Craft_4;
+		m_craftSlots[i].position.x = craftingStartPos.x + xOffset;
+		m_craftSlots[i].position.y = craftingStartPos.y + yOffset;
+		//m_craftSlots[i].slotId = static_cast<SlotId>(i);
+	}
+
+	m_craftResultSlot.position.x = craftingStartPos.x + 2 * m_invDistanceBetweenSlots + 20.0f * m_invPixelSize;
+	m_craftResultSlot.position.y = craftingStartPos.y + m_invDistanceBetweenSlots / 2.0f + m_invPixelSize;
+	//m_craftResultSlot.slotId = SlotId::Craft_4;
 }
 
-void Inventory::setCraftingTableSlotsPositions(const sf::Vector2i &craftingTableStartPos)
+void Inventory::setCraftingTableSlotsPositions(const sf::Vector2i& craftingTableStartPos)
 {
-	m_craftingTableSlots[0].position.x = craftingTableStartPos.x + 0 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[0].position.y = craftingTableStartPos.y;
-	m_craftingTableSlots[1].position.x = craftingTableStartPos.x + 1 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[1].position.y = craftingTableStartPos.y;
-	m_craftingTableSlots[2].position.x = craftingTableStartPos.x + 2 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[2].position.y = craftingTableStartPos.y;
+	int index = 0;
+	for (int row = 0; row < 3; row++)
+	{
+		for (int col = 0; col < 3; col++)
+		{
+			m_craftingTableSlots[index].position.x = craftingTableStartPos.x + col * m_invDistanceBetweenSlots;
+			m_craftingTableSlots[index].position.y = craftingTableStartPos.y + row * m_invDistanceBetweenSlots;
+			index++;
+		}
+	}
 
-	m_craftingTableSlots[3].position.x = craftingTableStartPos.x + 0 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[3].position.y = craftingTableStartPos.y + m_invDistanceBetweenSlots;
-	m_craftingTableSlots[4].position.x = craftingTableStartPos.x + 1 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[4].position.y = craftingTableStartPos.y + m_invDistanceBetweenSlots;
-	m_craftingTableSlots[5].position.x = craftingTableStartPos.x + 2 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[5].position.y = craftingTableStartPos.y + m_invDistanceBetweenSlots;
-
-	m_craftingTableSlots[6].position.x = craftingTableStartPos.x + 0 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[6].position.y = craftingTableStartPos.y + 2 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[7].position.x = craftingTableStartPos.x + 1 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[7].position.y = craftingTableStartPos.y + 2 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[8].position.x = craftingTableStartPos.x + 2 * m_invDistanceBetweenSlots;
-	m_craftingTableSlots[8].position.y = craftingTableStartPos.y + 2 * m_invDistanceBetweenSlots;
-
-	m_craftingTableResultSlot.position.x = craftingTableStartPos.x
-		+ 3 * m_invDistanceBetweenSlots + 40 * m_invPixelSize;
+	m_craftingTableResultSlot.position.x = craftingTableStartPos.x + 3 * m_invDistanceBetweenSlots + 40 * m_invPixelSize;
 	m_craftingTableResultSlot.position.y = craftingTableStartPos.y + m_invDistanceBetweenSlots;
 }
 

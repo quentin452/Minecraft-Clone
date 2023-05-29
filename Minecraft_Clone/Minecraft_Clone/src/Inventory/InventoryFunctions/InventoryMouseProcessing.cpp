@@ -142,29 +142,13 @@ bool Inventory::isMousePointedOnSlot(sf::Vector2i & mousePos, ItemSlot * itemSlo
 
 int Inventory::getPointedSlotColumn(int mousePosX)
 {
-	if (mousePosX >= m_slots[8].position.x)
-		return 8;
-	else if (mousePosX >= m_slots[7].position.x)
-		return 7;
-	else if (mousePosX >= m_slots[6].position.x)
-		return 6;
-	else if (mousePosX >= m_slots[5].position.x)
-		return 5;
-	else if (mousePosX >= m_slots[4].position.x)
-		return 4;
-	else if (mousePosX >= m_slots[3].position.x)
-		return 3;
-	else if (mousePosX >= m_slots[2].position.x)
-		return 2;
-	else if (mousePosX >= m_slots[1].position.x)
-		return 1;
-	else// if (mousePosX > m_slots[0].position.x)
-		return 0;
+	for (int i = 8; i >= 0; --i) {
+		if (mousePosX >= m_slots[i].position.x) {
+			return i;
+		}
+	}
+	return 0;
 }
-
-
-
-
 
 void Inventory::leftMouseWithGrabbedItemUpdate(sf::Vector2i &mousePos)
 {
@@ -175,9 +159,7 @@ void Inventory::leftMouseWithGrabbedItemUpdate(sf::Vector2i &mousePos)
 	else {
 		craftResultSlot = &m_craftingTableResultSlot;
 	}
-
 	if (m_pPointedSlot != craftResultSlot) {
-
 		if (isSlotEmpty(m_pPointedSlot)) {
 			std::swap(m_grabbedSlot.item, m_pPointedSlot->item);
 		}
@@ -186,7 +168,16 @@ void Inventory::leftMouseWithGrabbedItemUpdate(sf::Vector2i &mousePos)
 				tryMovePointedItem(mousePos);
 			}
 			else {
-				tryAddItem(m_pPointedSlot, &m_grabbedSlot);
+				if (m_pPointedSlot->item.getBlockId() == m_grabbedSlot.item.getBlockId() &&
+					m_pPointedSlot->item.getNumInStack() < m_pPointedSlot->item.getMaxStackSize()) {
+					int numToAdd = std::min(m_grabbedSlot.item.getNumInStack(),
+						m_pPointedSlot->item.getMaxStackSize() - m_pPointedSlot->item.getNumInStack());
+					m_pPointedSlot->item.add(numToAdd);
+					m_grabbedSlot.item.remove(numToAdd);
+				}
+				else {
+					std::swap(m_grabbedSlot.item, m_pPointedSlot->item);
+				}
 			}
 		}
 
