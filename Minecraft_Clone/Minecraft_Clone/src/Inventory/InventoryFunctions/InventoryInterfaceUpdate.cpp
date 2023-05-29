@@ -87,35 +87,35 @@ void Inventory::updateGrabbedItemIcon()
 
 void Inventory::updateToolsDurabilityBar()
 {
-	m_toolMaxDurabilityBars.clear();
-	m_toolDurabilityBars.clear();
+    m_toolMaxDurabilityBars.clear();
+    m_toolDurabilityBars.clear();
 
-	if (m_interfaceType == InterfaceType::Closed) {
-		for (int i = 0; i < 9; ++i) {
-			if (m_slots[i].item.getToolDurability() > 0 &&
-				m_slots[i].item.getToolDurability() < m_slots[i].item.getMaxToolDurability()) {
-				sf::RectangleShape toolMaxDurabilityBar;
-				toolMaxDurabilityBar.setFillColor(sf::Color::Black);
-				toolMaxDurabilityBar.setSize({ m_invSlotSize * 0.8f, m_invSlotSize / 8.0f });
-				toolMaxDurabilityBar.setOrigin(m_toolDurBarOrigin);
-				toolMaxDurabilityBar.setPosition(m_toolbarItemPos[i].x, m_toolbarItemPos[i].y);
+    if (m_interfaceType == InterfaceType::Closed) {
+        for (int i = 0; i < 9; ++i) {
+            if (m_slots[i].item.getToolDurability() > 0 &&
+                m_slots[i].item.getToolDurability() < m_slots[i].item.getMaxToolDurability()) {
+                sf::RectangleShape toolMaxDurabilityBar;
+                toolMaxDurabilityBar.setFillColor(sf::Color::Black);
+                toolMaxDurabilityBar.setSize({ m_invSlotSize * 0.8f, m_invSlotSize / 8.0f });
+                toolMaxDurabilityBar.setOrigin(m_toolDurBarOrigin);
+                toolMaxDurabilityBar.setPosition(m_toolbarItemPos[i].x, m_toolbarItemPos[i].y);
 
-				m_toolMaxDurabilityBars.emplace_back(std::move(toolMaxDurabilityBar));
+                m_toolMaxDurabilityBars.emplace_back(std::move(toolMaxDurabilityBar));
 
-				int dur = m_slots[i].item.getToolDurability();
-				float ratio = (float)dur / m_slots[i].item.getMaxToolDurability();
+                int dur = m_slots[i].item.getToolDurability();
+                float ratio = (float)dur / m_slots[i].item.getMaxToolDurability();
 
-				sf::RectangleShape toolDurabilityBar;
-				sf::Color color(255 - ratio * 255, ratio * 255, 0, 255);
-				toolDurabilityBar.setFillColor(color);
-				toolDurabilityBar.setSize({ m_invSlotSize * 0.8f * ratio, m_invSlotSize / 8.0f * 0.5f });
-				toolDurabilityBar.setOrigin(m_toolDurBarOrigin);
-				toolDurabilityBar.setPosition(m_toolbarItemPos[i].x, m_toolbarItemPos[i].y);
+                sf::RectangleShape toolDurabilityBar;
+                sf::Color color(255 - ratio * 255, ratio * 255, 0, 255);
+                toolDurabilityBar.setFillColor(color);
+                toolDurabilityBar.setSize({ m_invSlotSize * 0.8f * ratio, m_invSlotSize / 8.0f * 0.5f });
+                toolDurabilityBar.setOrigin(m_toolDurBarOrigin);
+                toolDurabilityBar.setPosition(m_toolbarItemPos[i].x, m_toolbarItemPos[i].y);
 
-				m_toolDurabilityBars.emplace_back(std::move(toolDurabilityBar));
-			}
-		}
-	}
+                m_toolDurabilityBars.emplace_back(std::move(toolDurabilityBar));
+            }
+        }
+    }
 	else if (m_interfaceType == InterfaceType::Inventory) {
 		for (int i = 0; i < 36; ++i)
 			createToolDurabilityBar(&m_slots[i]);
@@ -137,6 +137,9 @@ void Inventory::updateToolsDurabilityBar()
 
 void Inventory::updateToolsDurBarGrabbedItem()
 {
+	m_toolMaxDurBarGrabbedItem.setSize({ 0, 0 });  // Clear the previous size
+	m_toolDurBarGrabbedItem.setSize({ 0, 0 });     // Clear the previous size
+
 	if (m_grabbedSlot.item.getToolDurability() > 0 &&
 		m_grabbedSlot.item.getToolDurability() < m_grabbedSlot.item.getMaxToolDurability()) {
 

@@ -35,7 +35,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fog
 - Surround sound and music!
 
-**Features todo :** 
+## Features todo :
 
 - Add Entities in game + Player + Mob spawner + Fall blocks [#1](https://github.com/quentin452/Minecraft-Clone/issues/1)   
 - Add a save game system [#2](https://github.com/quentin452/Minecraft-Clone/issues/2)
@@ -53,7 +53,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Add enchantment system [#24](https://github.com/quentin452/Minecraft-Clone/issues/24)
 - Add dimension system [#25](https://github.com/quentin452/Minecraft-Clone/issues/25)
 
-**Fix Todo :**
+## Fix Todo : 
 
 - Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
 - Fix water isn't updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
@@ -64,11 +64,14 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fix can walk on the water when press space bar in continue
 - Fix texture of glowstonedust
 - Fix when left click with apple (eating) i got duplicate animation
-- Fix when try to add a precraft like stick + crafting table , only one of this craft is gived(the issue only appear when make an shift click)
+- Fix Tooltip aren't stocked because , when i drop and regive the tool into the inventory , he reset the tool durability
+- Fix when i click outside the inventory with a tool with durability 130/131 by example i got a second durability bar
+- Fix when try to add a precraft like stick + crafting table , only one of this craft is gived(the issue only appear when make an shift click) + when left clicking with an item into the crafted slot , the item disappear
+
 - Fix animation bug when change inventory slot 
 
-**Other todo :**
- 
+## Other todo :  
+
 - Deduplicate some codes
 - Make sure when i click on the Middle Click in Creative mode then give the Block in The Inventory
 - Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
@@ -78,7 +81,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Make Creative mod have infinite block
 - Upgrade inventory mouse processing functionality 
 
-## Controls
+## Controls : 
 
 | Button                        | Action                                                         |
 |-------------------------------|----------------------------------------------------------------|

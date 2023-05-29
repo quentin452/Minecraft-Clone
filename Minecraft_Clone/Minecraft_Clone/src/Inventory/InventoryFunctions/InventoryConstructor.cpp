@@ -9,7 +9,7 @@ Inventory::Inventory(Player &player, Application &app)
 	: m_pPlayer{ &player },
 	m_updateIcons{ true }
 {
-	m_slots[6].item.setData(BlockId::StoneAxe, 10);
+	m_slots[6].item.setData(BlockId::StoneAxe, 1);
 	m_slots[8].item.setData(BlockId::Apple, 10);
 
 	m_slots[7].item.setData(BlockId::Glowstone, 64);
