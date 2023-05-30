@@ -1,8 +1,13 @@
 #pragma once
 
 #include <cstdint>
+#include <utility>
 
-using Block_t = uint8_t;
+// Identifier limits for BlockId 240,000,000 , DON'T PUT A VALUE HIGHER THAN THE LIMIT DUE TO A TECHNICAL LIMITATION: The total size of the array must not exceed 0x7fffffff bytes.
+// Don't forget to change the block ids in the .block file to fix the crash
+// Add higher value like 240,000,000, RAM usage can be increased by 4
+
+using Block_t = uint32_t;
 
 enum class BlockId : Block_t {
 	Air = 0,
@@ -89,8 +94,8 @@ enum class BlockId : Block_t {
 	CraftingTable = 81,
 	Cobblestone = 82,
 	Diamond = 83,
-	Glowstone = 84,
 	GlowstoneDust = 85,
+	Glowstone = 86,
 
-    NUM_TYPES
+	NUM_TYPES,
 };

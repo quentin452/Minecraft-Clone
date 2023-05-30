@@ -6,10 +6,12 @@ All textures, music and sound belong to the creators of Minecraft.<br/>
 The game is compiled in 64 bits<br/>
 
 ## The game:
+
 https://github.com/Aidanhouk/Minecraft-Clone/releases/tag/v1.0
 https://drive.google.com/file/d/1JKHZTW7CWTI9DH2XYHRX3kWUecQYvA31/view?usp=sharing
 
-## Video:
+## Video : 
+
 https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 ## Implemented features:
@@ -58,7 +60,6 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
 - Fix water isn't updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
 - Fix can pose sugar cane block without any water [#13](https://github.com/quentin452/Minecraft-Clone/issues/13)
-- Fix firsts hits on player are doesn't work [#14](https://github.com/quentin452/Minecraft-Clone/issues/14)
 - Fix white Leaves glitch issue when watch leaves above it [#16](https://github.com/quentin452/Minecraft-Clone/issues/16)
 - Fix biome Blend is weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
 - Fix can walk on the water when press space bar in continue

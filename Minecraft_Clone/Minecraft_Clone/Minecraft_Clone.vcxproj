@@ -919,6 +919,7 @@ xcopy "$(ProjectDir)Shaders\" "$(TargetDir)Shaders\" /s /y
 xcopy "$(ProjectDir)config.txt" "$(TargetDir)" /y
 xcopy "$(ProjectDir)Controls.txt" "$(TargetDir)" /y
 xcopy "$(ProjectDir)shaders.txt" "$(TargetDir)" /y
+xcopy "$(ProjectDir)dll" "$(TargetDir)" /y
 </Command>
     </PostBuildEvent>
     <PreBuildEvent>
