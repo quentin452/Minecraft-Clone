@@ -54,11 +54,11 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Add potion system [#23](https://github.com/quentin452/Minecraft-Clone/issues/23)   
 - Add enchantment system [#24](https://github.com/quentin452/Minecraft-Clone/issues/24)
 - Add dimension system [#25](https://github.com/quentin452/Minecraft-Clone/issues/25)
+- Add a water + lava system
 
 ## Fix Todo : 
 
-- Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11)
-- Fix water isn't updated [#12](https://github.com/quentin452/Minecraft-Clone/issues/12)
+- Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11) .I need when i am in Sneak mode , i can't fall from blocks like in minecraft
 - Fix can pose sugar cane block without any water [#13](https://github.com/quentin452/Minecraft-Clone/issues/13)
 - Fix white Leaves glitch issue when watch leaves above it [#16](https://github.com/quentin452/Minecraft-Clone/issues/16)
 - Fix biome Blend is weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
@@ -68,8 +68,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fix Tooltip aren't stocked because , when i drop and regive the tool into the inventory , he reset the tool durability
 - Fix when i click outside the inventory with a tool with durability 130/131 by example i got a second durability bar
 - Fix when try to add a precraft like stick + crafting table , only one of this craft is gived(the issue only appear when make an shift click) + when left clicking with an item into the crafted slot , the item disappear
-
-- Fix animation bug when change inventory slot 
+- Fix animation tooltip duplication bug when change inventory slot 
 
 ## Other todo :  
 
