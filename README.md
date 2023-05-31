@@ -52,7 +52,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 ## Fixes to be implemented:
 
-    Fix crash when going to Z 150
+    Fix crash when going to Z 150, the bug appear because X Y Z cannot be negative , but i want negative value permissive
     Fix issue with crouching not working as intended. I want to prevent falling from blocks while crouching, similar to Minecraft.
     Fix the ability to place a sugar cane block without water nearby (I want the sugar cane to require water to be planted)
     Fix the issue of white leaf flickering (for distant leaves) when looking at leaves above
@@ -64,6 +64,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
     Fix the issue with pre-crafting. Currently, when a player tries to create a pre-craft by combining a stick and a crafting table, only one of these crafts is given. This problem occurs only when performing a shift-click. Additionally, when clicking with an item in the crafting slot, the item disappears.
     Fix tooltip duplication bug (the duplication occurs at the old item location and appears for less than a second) when changing the item slot
     Fix significant lag when pressing C to reload chunks (this feature is currently disabled, so it needs to be reactivated in the code)
+    Fix memory leak in the loadChunks from worldgeneration
 
 ## Other tasks to be completed:
 
