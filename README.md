@@ -15,6 +15,7 @@ https://drive.google.com/file/d/1JKHZTW7CWTI9DH2XYHRX3kWUecQYvA31/view?usp=shari
 https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 ## Implemented features:
+
 - Procedural world generation
 - Biomes
 - Caves
@@ -37,49 +38,44 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 - Fog
 - Surround sound and music!
 
-## Features todo :
+## Features to be implemented:
 
-- Add Entities in game + Player + Mob spawner + Fall blocks [#1](https://github.com/quentin452/Minecraft-Clone/issues/1)   
-- Add a save game system [#2](https://github.com/quentin452/Minecraft-Clone/issues/2)
-- Add discord RPC [#3](https://github.com/quentin452/Minecraft-Clone/issues/3)   
-- Add Hud for settings [#4](https://github.com/quentin452/Minecraft-Clone/issues/4) 
-- Add Main Menu [#5](https://github.com/quentin452/Minecraft-Clone/issues/5)
-- Add A TPS + FPS graph profiler [#6](https://github.com/quentin452/Minecraft-Clone/issues/6)  
-- Add a Creative Menu to Show all blocks in the game [#7](https://github.com/quentin452/Minecraft-Clone/issues/7)  
-- Add a Chat features [#8](https://github.com/quentin452/Minecraft-Clone/issues/8)     
-- Add F2 + F1 + F5 + F11 Features [#18](https://github.com/quentin452/Minecraft-Clone/issues/18)     
-- Add pick block button (middle click) in creative mod [#20](https://github.com/quentin452/Minecraft-Clone/issues/20) 
-- Add Command features such as tp position [#21](https://github.com/quentin452/Minecraft-Clone/issues/21)
-- Add Particle system [#22](https://github.com/quentin452/Minecraft-Clone/issues/22)     
-- Add potion system [#23](https://github.com/quentin452/Minecraft-Clone/issues/23)   
-- Add enchantment system [#24](https://github.com/quentin452/Minecraft-Clone/issues/24)
-- Add dimension system [#25](https://github.com/quentin452/Minecraft-Clone/issues/25)
-- Add a water + lava system
+    Add entity system in the game + Player + Monster spawner + Falling blocks
+    Add game save system (for chunks)
+    Add Rich Presence Discord functionality
+    Add settings menu, main menu
+    Add TPS + FPS profiler with graphical representation
+    Add creative menu to display all blocks in the game
+    Add chat features + commands such as tp position
+    Add F2 + F1 + F5 + F11 key functionality (similar to Minecraft)
+    Add particle system, potions, enchantments, dimensions, water, and lava. Leaf decay, cactus and sugar cane growing.
 
-## Fix Todo : 
+## Fixes to be implemented:
 
-- Fix sneak is not work as intended [#11](https://github.com/quentin452/Minecraft-Clone/issues/11) .I need when i am in Sneak mode , i can't fall from blocks like in minecraft
-- Fix can pose sugar cane block without any water [#13](https://github.com/quentin452/Minecraft-Clone/issues/13)
-- Fix white Leaves glitch issue when watch leaves above it [#16](https://github.com/quentin452/Minecraft-Clone/issues/16)
-- Fix biome Blend is weird [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
-- Fix can walk on the water when press space bar in continue
-- Fix texture of glowstonedust
-- Fix when left click with apple (eating) i got duplicate animation
-- Fix Tooltip aren't stocked because , when i drop and regive the tool into the inventory , he reset the tool durability
-- Fix when i click outside the inventory with a tool with durability 130/131 by example i got a second durability bar
-- Fix when try to add a precraft like stick + crafting table , only one of this craft is gived(the issue only appear when make an shift click) + when left clicking with an item into the crafted slot , the item disappear
-- Fix animation tooltip duplication bug when change inventory slot 
+    Fix crash when going to Z 150
+    Fix issue with crouching not working as intended. I want to prevent falling from blocks while crouching, similar to Minecraft.
+    Fix the ability to place a sugar cane block without water nearby (I want the sugar cane to require water to be planted)
+    Fix the issue of white leaf flickering (for distant leaves) when looking at leaves above
+    Fix inconsistency biome blending(issue can be founded on my github )
+    Fix the ability to walk on water by continuously pressing the space bar
+    Fix the texture of glowstone dust
+    Fix animation duplication issue when eating an apple
+    Fix the issue of tooltips not being saved when depositing and retrieving tools in the inventory, resulting in durability reset
+    Fix the appearance of a second durability bar when clicking outside the inventory with a tool with durability of 130/131, for example
+    Fix the issue with pre-crafting. Currently, when a player tries to create a pre-craft by combining a stick and a crafting table, only one of these crafts is given. This problem occurs only when performing a shift-click. Additionally, when clicking with an item in the crafting slot, the item disappears.
+    Fix tooltip duplication bug (the duplication occurs at the old item location and appears for less than a second) when changing the item slot
+    Fix significant lag when pressing C to reload chunks (this feature is currently disabled, so it needs to be reactivated in the code)
 
-## Other todo :  
+## Other tasks to be completed:
 
-- Deduplicate some codes
-- Make sure when i click on the Middle Click in Creative mode then give the Block in The Inventory
-- Make sure to change all minecraft sounds/textures from minecraft to uncopyrighted things
-- Make cactus , make hit on the player without needing to move on it
-- Make sure that the Dirt Color change in function of biome and not in function of BlockId
-- Make check to don't spawn TallGrass if no block are underneath 
-- Make Creative mod have infinite block
-- Upgrade inventory mouse processing functionality 
+    Ensure that I can exit the death menu to respawn, as currently, I remain stuck in the menu and have to restart the game
+    Ensure that when I click with the middle mouse button in creative mode, the block is added to the inventory
+    Ensure to change all sounds/textures from Minecraft to copyright-free elements (for example, by using an open-source Minecraft texture pack)
+    Allow cactus to damage the player without needing to walk on it every time to get damage
+    Ensure that the color of the dirt changes based on the biome and not the block ID
+    Verify that no tall grass blocks generate if there are no blocks underneath
+    Allow infinite blocks in creative mode
+    Improve the functionality of the cursor in the inventory (similar to Minecraft for crafting, etc.)
 
 ## Controls : 
 

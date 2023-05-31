@@ -126,7 +126,6 @@
     <ClCompile Include="src\Util\FileUtil.cpp" />
     <ClCompile Include="src\Util\FPSCounter.cpp" />
     <ClCompile Include="src\Util\Random.cpp" />
-    <ClCompile Include="src\vendor\glm\detail\glm.cpp" />
     <ClCompile Include="src\world\block\BlockData.cpp" />
     <ClCompile Include="src\world\block\BlockDatabase.cpp" />
     <ClCompile Include="src\world\block\blocktypes\Blocktype.cpp" />

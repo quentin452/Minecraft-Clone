@@ -283,7 +283,6 @@ set(SRC_FILES
         src/vendor/glm/detail/func_trigonometric_simd.inl
         src/vendor/glm/detail/func_vector_relational.inl
         src/vendor/glm/detail/func_vector_relational_simd.inl
-        src/vendor/glm/detail/glm.cpp
         src/vendor/glm/detail/qualifier.hpp
         src/vendor/glm/detail/setup.hpp
         src/vendor/glm/detail/type_float.hpp
