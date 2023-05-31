@@ -32,7 +32,6 @@ int main()
     loadShaders();
     displayInfo();
 
-    std::cin.ignore();
     std::cout << "Loading game...\n";
 
     Application app(config);
