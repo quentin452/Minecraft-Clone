@@ -23,7 +23,7 @@ public:
 
 	const sf::Image & getAtlasImage() const { return m_textureAtlasImage; }
 	int getAtlasSize() const { return m_imageSize; }
-	int getIndivTextureSize() const { return m_individualTextureSize; }
+	const int getIndivTextureSize() const { return m_individualTextureSize; }
 private:
 	sf::Image m_textureAtlasImage;
 	int m_imageSize;

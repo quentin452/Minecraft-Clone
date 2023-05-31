@@ -9,6 +9,7 @@ Inventory::Inventory(Player &player, Application &app)
 	: m_pPlayer{ &player },
 	m_updateIcons{ true }
 {
+	m_slots[5].item.setData(BlockId::Snow, 64);
 	m_slots[6].item.setData(BlockId::StoneAxe, 1);
 	m_slots[8].item.setData(BlockId::Apple, 10);
 

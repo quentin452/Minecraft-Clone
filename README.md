@@ -58,7 +58,6 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
     Fix the issue of white leaf flickering (for distant leaves) when looking at leaves above
     Fix inconsistency biome blending(issue can be founded on my github )
     Fix the ability to walk on water by continuously pressing the space bar
-    Fix the texture of glowstone dust
     Fix animation duplication issue when eating an apple
     Fix the issue of tooltips not being saved when depositing and retrieving tools in the inventory, resulting in durability reset
     Fix the appearance of a second durability bar when clicking outside the inventory with a tool with durability of 130/131, for example
@@ -70,7 +69,6 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
     Ensure that I can exit the death menu to respawn, as currently, I remain stuck in the menu and have to restart the game
     Ensure that when I click with the middle mouse button in creative mode, the block is added to the inventory
-    Ensure to change all sounds/textures from Minecraft to copyright-free elements (for example, by using an open-source Minecraft texture pack)
     Allow cactus to damage the player without needing to walk on it every time to get damage
     Ensure that the color of the dirt changes based on the biome and not the block ID
     Verify that no tall grass blocks generate if there are no blocks underneath
