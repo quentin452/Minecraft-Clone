@@ -47,7 +47,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 #4     Add TPS + FPS profiler with graphical representation when clicking on F6 **using Dear ImGui**
 #5     Add creative menu to display all blocks in the game
 #6     Add chat features + commands such as tp position
-#7     Add F2 + F1 + F5 + F11 key functionality (similar to Minecraft)
+#7     Add F2 + F5 + F11 key functionality (similar to Minecraft)
 #8     Add dimensions(like the nether dimension), water , lava. Leaf decay, cactus and sugar cane growing.(only 1 per functionnality like 1 particle effect , 1 enchantment etc......)
 #9     Add enchantments system
 #10    Add particle system, potions(can be eated by player), 
