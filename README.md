@@ -40,21 +40,22 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 ## Features to be implemented:
 
-#1     Add main menu(with a button to launch the game + quit the game + go to settings menu + with a dropdown for saved world show #2) , settings menu(with settings for post process,shaders,keybind + go to main menu)**using SFML(already installed)**
+#1     Add main menu
+#2     Add settings menu
 #2     Add game save system (for chunks)**using LevelDB**
 #3     Add entity system in the game + Player + Monster spawner + Falling blocks**using ENTT LIB x64(already installed)**(only 1 per functionnality like 1 Zombie, 1 sand etc...)
 #4     Add TPS + FPS profiler with graphical representation when clicking on F6 **using Dear ImGui**
 #5     Add creative menu to display all blocks in the game
 #6     Add chat features + commands such as tp position
 #7     Add F2 + F1 + F5 + F11 key functionality (similar to Minecraft)
-#8     Add particle system, potions(can be eated by player), dimensions(like the nether dimension), water , lava. Leaf decay, cactus and sugar cane growing.(only 1 per functionnality like 1 particle effect , 1 enchantment etc......)
+#8     Add dimensions(like the nether dimension), water , lava. Leaf decay, cactus and sugar cane growing.(only 1 per functionnality like 1 particle effect , 1 enchantment etc......)
 #9     Add enchantments system
-
+#10    Add particle system, potions(can be eated by player), 
 
 ## Fixes to be implemented:
 
 #1     Fix crash when going to Z 150, the bug appear because X Y Z cannot be negative , but i want negative value permissive
-#2     Fix issue with sneaking not working as intended. **the issue appear when you enable caps lock in rivaturner**
+#2     Fix issue with sneaking not working as intended. **the issue appear when you enable caps lock in rivaturner or vsync** (caused by sneakyFallCheck from Player class)
 #3     Fix the ability to place a sugar cane block without water nearby (I want the sugar cane to require water to be planted)
 #4     Fix the issue of white leaf flickering (for distant leaves) when looking at leaves above
 #5     Fix inconsistency biome blending [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
