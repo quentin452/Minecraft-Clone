@@ -40,41 +40,41 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 ## Features to be implemented:
 
-    Add entity system in the game + Player + Monster spawner + Falling blocks
-    Add game save system (for chunks)
-    Add Rich Presence Discord functionality
-    Add settings menu, main menu
-    Add TPS + FPS profiler with graphical representation
-    Add creative menu to display all blocks in the game
-    Add chat features + commands such as tp position
-    Add F2 + F1 + F5 + F11 key functionality (similar to Minecraft)
-    Add particle system, potions, enchantments, dimensions, water, and lava. Leaf decay, cactus and sugar cane growing.
+#1     Add main menu(with a button to launch the game + quit the game + go to settings menu + with a dropdown for saved world show #2) , settings menu(with settings for post process,shaders,keybind + go to main menu)**using SFML(already installed)**
+#2     Add game save system (for chunks)**using LevelDB**
+#3     Add entity system in the game + Player + Monster spawner + Falling blocks**using ENTT LIB x64(already installed)**(only 1 per functionnality like 1 Zombie, 1 sand etc...)
+#4     Add TPS + FPS profiler with graphical representation when clicking on F6 **using Dear ImGui**
+#5     Add creative menu to display all blocks in the game
+#6     Add chat features + commands such as tp position
+#7     Add F2 + F1 + F5 + F11 key functionality (similar to Minecraft)
+#8     Add particle system, potions(can be eated by player), dimensions(like the nether dimension), water , lava. Leaf decay, cactus and sugar cane growing.(only 1 per functionnality like 1 particle effect , 1 enchantment etc......)
+#9     Add enchantments system
+
 
 ## Fixes to be implemented:
 
-    Fix crash when going to Z 150, the bug appear because X Y Z cannot be negative , but i want negative value permissive
-    Fix issue with crouching not working as intended. I want to prevent falling from blocks while crouching, similar to Minecraft.
-    Fix the ability to place a sugar cane block without water nearby (I want the sugar cane to require water to be planted)
-    Fix the issue of white leaf flickering (for distant leaves) when looking at leaves above
-    Fix inconsistency biome blending(issue can be founded on my github )
-    Fix the ability to walk on water by continuously pressing the space bar
-    Fix animation duplication issue when eating an apple
-    Fix the issue of tooltips not being saved when depositing and retrieving tools in the inventory, resulting in durability reset
-    Fix the appearance of a second durability bar when clicking outside the inventory with a tool with durability of 130/131, for example
-    Fix the issue with pre-crafting. Currently, when a player tries to create a pre-craft by combining a stick and a crafting table, only one of these crafts is given. This problem occurs only when performing a shift-click. Additionally, when clicking with an item in the crafting slot, the item disappears.
-    Fix tooltip duplication bug (the duplication occurs at the old item location and appears for less than a second) when changing the item slot
-    Fix significant lag when pressing C to reload chunks (this feature is currently disabled, so it needs to be reactivated in the code)
-    Fix memory leak in the loadChunks from worldgeneration
+#1     Fix crash when going to Z 150, the bug appear because X Y Z cannot be negative , but i want negative value permissive
+#2     Fix issue with sneaking not working as intended. **the issue appear when you enable caps lock in rivaturner**
+#3     Fix the ability to place a sugar cane block without water nearby (I want the sugar cane to require water to be planted)
+#4     Fix the issue of white leaf flickering (for distant leaves) when looking at leaves above
+#5     Fix inconsistency biome blending [#17](https://github.com/quentin452/Minecraft-Clone/issues/17)
+#6     Fix animation duplication issue when eating an apple
+#7     Fix the issue of tooltips not being saved when depositing and retrieving tools in the inventory, resulting in durability reset + can reset durability when using right keybind in inventory with a tool dragged
+#8     Fix the appearance of a second durability bar when clicking outside the inventory with a tool with durability of 130/131, for example **the issue probably appear in the updateInventoryText method from InventoryInterfaceUpdate class** 
+#9     Fix the issue with pre-crafting. Currently, when a player tries to create a pre-craft by combining a stick and a crafting table, only one of these crafts is given. This problem occurs only when performing a shift-click. Additionally + when clicking with an item in the crafting slot, the item disappears.
+#10    Fix tooltip duplication bug (the duplication occurs at the old item location and appears for less than a second) when changing the item slot **the issue probably appear in the updateInventoryText method from InventoryInterfaceUpdate class**  
+#11    Fix significant lag when pressing C to reload chunks (this feature is currently disabled, so it needs to be reactivated in the code)
+#12    Fix the ability to walk on water by continuously pressing the space bar
 
 ## Other tasks to be completed:
 
-    Ensure that I can exit the death menu to respawn, as currently, I remain stuck in the menu and have to restart the game
-    Ensure that when I click with the middle mouse button in creative mode, the block is added to the inventory
-    Allow cactus to damage the player without needing to walk on it every time to get damage
-    Ensure that the color of the dirt changes based on the biome and not the block ID
-    Verify that no tall grass blocks generate if there are no blocks underneath
-    Allow infinite blocks in creative mode
-    Improve the functionality of the cursor in the inventory (similar to Minecraft for crafting, etc.)
+#1     Allow infinite blocks in creative mode
+#2     Ensure that I can exit the death menu to respawn, as currently, I remain stuck in the menu and have to restart the game
+#3     Ensure that when I click with the middle mouse button in creative mode, the block is added to the inventory
+#4     Allow cactus to damage the player without needing to walk on it every time to get damage
+#5     Verify that no tall grass blocks generate if there are no blocks underneath
+#6     Improve the functionality of the cursor in the inventory (similar to Minecraft for crafting, etc.)
+#7     Ensure that the color of the dirt changes based on the biome and not the block ID
 
 ## Controls : 
 
