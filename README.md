@@ -46,7 +46,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 #3     Add entity system in the game + Player + Monster spawner + Falling blocks**using ENTT LIB x64(already installed)**(only 1 per functionnality like 1 Zombie, 1 sand etc...)
 #4     Add TPS + FPS profiler with graphical representation when clicking on F6 **using Dear ImGui**
 #5     Add creative menu to display all blocks in the game
-#6     Add chat features + commands such as tp position
+#6     Add chat features + commands such as tp position,summon entity
 #7     Add F2 + F5 + F11 key functionality (similar to Minecraft)
 #8     Add dimensions(like the nether dimension), water , lava. Leaf decay, cactus and sugar cane growing.(only 1 per functionnality like 1 particle effect , 1 enchantment etc......)
 #9     Add enchantments system
@@ -65,7 +65,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 #9     Fix the issue with pre-crafting. Currently, when a player tries to create a pre-craft by combining a stick and a crafting table, only one of these crafts is given. This problem occurs only when performing a shift-click. Additionally + when clicking with an item in the crafting slot, the item disappears.
 #10    Fix tooltip duplication bug (the duplication occurs at the old item location and appears for less than a second) when changing the item slot **the issue probably appear in the updateInventoryText method from InventoryInterfaceUpdate class**  
 #11    Fix significant lag when pressing C to reload chunks (this feature is currently disabled, so it needs to be reactivated in the code)
-#12    Fix the ability to walk on water by continuously pressing the space bar
+#12    Fix the ability to walk on water by continuously pressing the space bar(maybe can be fixed by adding a wait to the jump key)
 
 ## Other tasks to be completed:
 
