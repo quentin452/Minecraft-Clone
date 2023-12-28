@@ -46,7 +46,7 @@ https://youtube.com/playlist?list=PLlqmWU1ThvSpI_KBOWY2OALfcfpfgZbJR
 
 - #3     Add game save system (for chunks)**using LevelDB**
 
-- #4     Add entity system in the game + Player + Monster spawner + Falling blocks**using ENTT LIB x64(already installed)**(only 1 per functionnality like 1 Zombie, 1 sand etc...)
+- #4     Add entity system in the game + Player + Monster spawner + Falling blocks**using entityx lib x64**(only 1 per functionnality like 1 Zombie, 1 sand etc...)
 
 - #5     Add TPS + FPS profiler with graphical representation when clicking on F6 **using Dear ImGui**
 
